@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd"
+      lang="ja">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>${title}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
+</head>
+<body>
+<section class="hero is-success">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Tapestry5 practice</h1>
+            <h2 class="subtitle">${title}</h2>
+        </div>
+    </div>
+</section>
+<div class="section columns is-variable is-8">
+    <div class="column is-narrow">
+        <aside class="menu">
+            <p class="menu-label">ページ</p>
+            <ul class="menu-list">
+                <li><t:pagelink page="index" t:mixins="MenuPageLink">/</t:pagelink></li>
+                <li><t:pagelink page="sample" t:mixins="MenuPageLink">/sample</t:pagelink></li>
+                <li><t:pagelink page="persistence" context="['abc', 7]">/persistence/abc/7</t:pagelink></li>
+                <li><t:pagelink page="servicestatus" t:mixins="MenuPageLink">/servicestatus</t:pagelink></li>
+                <li><t:pagelink page="exceptionreport" t:mixins="MenuPageLink">/exceptionreport</t:pagelink></li>
+                <li><t:pagelink page="propertydisplayblocks" t:mixins="MenuPageLink">/propertydisplayblocks</t:pagelink></li>
+                <li><t:pagelink page="propertyeditblocks" t:mixins="MenuPageLink">/propertyeditblocks</t:pagelink></li>
+            </ul>
+        </aside>
+    </div>
+    <div class="column">
+        <div class="container">
+            <t:body/>
+        </div>
+    </div>
+</div>
+</body>
+</html>

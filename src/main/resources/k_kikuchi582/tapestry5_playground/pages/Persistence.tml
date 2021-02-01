@@ -1,0 +1,24 @@
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'たいとる'">
+    <h1 class="title">Persistence</h1>
+    <t:form>
+        <div class="columns">
+            <div class="column is-8">
+                <h3 class="subTitle">contexts</h3>
+            </div>
+            <div class="column">
+                <t:submit t:id="add" class="button is-success is-outlined" value="add"/>
+            </div>
+        </div>
+        <t:loop source="context" index="index">
+            <div class="box">
+                <div class="columns">
+                    <div class="column"><t:textfield value="aContext" class="input"/></div>
+                    <div class="column">
+                        <t:submit t:id="delete" context="index" class="button is-success is-outlined" value="delete"/>
+                    </div>
+                </div>
+            </div>
+        </t:loop>
+        <t:submit t:id="save" value="保存する" class="button is-success"/>
+    </t:form>
+</t:base>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" lang="ja">
+<head>
+    <title>サンプル</title>
+</head>
+<body>
+<h1>Sample</h1>
+<div>ほげふが</div>
+<div>
+    <form t:type="form" t:id="sample_form">
+        <input  t:type="textfield" t:id="text" value="text"/>
+
+        <t:submit t:id="save"  value="保存する"/>
+    </form>
+</div>
+</body>
+</html>
