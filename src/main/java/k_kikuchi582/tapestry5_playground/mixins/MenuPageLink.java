@@ -18,6 +18,7 @@ public class MenuPageLink {
         String href = markupWriter.getElement().getAttribute("href");
         if (href.contains(pageName)) {
             markupWriter.getElement().addClassName("is-active");
+            markupWriter.getElement().addClassName("pointer-events-none");
         }
     }
 

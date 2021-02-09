@@ -1,0 +1,25 @@
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'IoC'">
+    <h1 class="title">IoC</h1>
+    <div class="columns">
+        <div class="column">
+            <div class="box">
+                <p class="subTitle">ServiceA</p>${serviceA}
+            </div>
+        </div>
+        <div class="column">
+            <div class="box">
+                <p class="subTitle">ServiceB</p>${serviceB}
+            </div>
+        </div>
+        <div class="column">
+            <div class="box">
+                <p class="subTitle">ServiceComposite</p>${serviceComposite}
+            </div>
+        </div>
+        <div class="column">
+            <div class="box">
+                <p class="subTitle">ServiceD</p>${serviceD}
+            </div>
+        </div>
+    </div>
+</t:base>

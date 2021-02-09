@@ -24,6 +24,7 @@
                 <li><t:pagelink page="index" t:mixins="MenuPageLink">/</t:pagelink></li>
                 <li><t:pagelink page="sample" t:mixins="MenuPageLink">/sample</t:pagelink></li>
                 <li><t:pagelink page="persistence" context="['abc', 7]">/persistence/abc/7</t:pagelink></li>
+                <li><t:pagelink page="ioc/IoC">/ioc/IoC</t:pagelink></li>
                 <li><t:pagelink page="servicestatus" t:mixins="MenuPageLink">/servicestatus</t:pagelink></li>
                 <li><t:pagelink page="exceptionreport" t:mixins="MenuPageLink">/exceptionreport</t:pagelink></li>
                 <li><t:pagelink page="propertydisplayblocks" t:mixins="MenuPageLink">/propertydisplayblocks</t:pagelink></li>
