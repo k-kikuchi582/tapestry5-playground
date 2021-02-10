@@ -1,0 +1,33 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box">
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>paramA</th>
+                <td>${paramA}</td>
+            </tr>
+            <tr>
+                <th>paramB</th>
+                <td>${paramB}</td>
+            </tr>
+            <tr>
+                <th>paramC</th>
+                <td>${paramC}</td>
+            </tr>
+            <tr>
+                <th>paramD</th>
+                <td>${paramD}</td>
+            </tr>
+            <tr>
+                <th>paramE</th>
+                <td>${paramE}</td>
+            </tr>
+            <tr>
+                <th>paramF</th>
+                <td>${paramF}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</t:container>
+

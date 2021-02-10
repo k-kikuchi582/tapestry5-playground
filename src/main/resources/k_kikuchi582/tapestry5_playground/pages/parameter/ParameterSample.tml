@@ -1,0 +1,31 @@
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'パラメータ'">
+    <h1 class="title">パラメータ</h1>
+    <div class="columns is-multiline">
+        <div class="column">
+            <t:parameter.Parameters
+                    parama="literal:A"
+                    b="'B'"
+                    paramc="'paramc'"
+                    paramd="D"
+                    paramf="'F'"/>
+        </div>
+        <!-- paramCはrequiredなので省略できない -->
+        <!-- paramfはallowNull=falseなのでnullは不可 -->
+<!--        <div class="column">-->
+<!--            <t:parameter.parameters-->
+<!--                    parama="literal:A"-->
+<!--                    b="'B'"-->
+<!--                    paramd="D"-->
+<!--                    paramf="null"/>-->
+<!--        </div>-->
+    </div>
+
+    <h1 class="title">パラメータの双方向性</h1>
+    <div class="columns">
+        <div class="column">${count}</div>
+        <div class="column">
+            <t:parameter.ParameterBiDirectional count="count"/>
+        </div>
+    </div>
+</t:base>
+

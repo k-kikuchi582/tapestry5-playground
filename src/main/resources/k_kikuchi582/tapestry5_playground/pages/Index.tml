@@ -1,13 +1,5 @@
 <t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'たいとる'">
-    <h1>Hello World</h1>
-    <ul>
-        <li><t:pagelink page="sample">/sample</t:pagelink></li>
-        <li><t:pagelink page="persistence" context="['abc', 7]">/persistence/abc/7</t:pagelink></li>
-        <li><t:pagelink page="ioc/IoC">/ioc/IoC</t:pagelink></li>
-        <li><t:pagelink page="servicestatus">/servicestatus</t:pagelink></li>
-        <li><t:pagelink page="exceptionreport">/exceptionreport</t:pagelink></li>
-        <li><t:pagelink page="propertydisplayblocks">/propertydisplayblocks</t:pagelink></li>
-        <li><t:pagelink page="propertyeditblocks">/propertyeditblocks</t:pagelink></li>
-    </ul>
+    <h1 class="title">Hello World</h1>
+    <t:links/>
 </t:base>
 
