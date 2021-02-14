@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd"
-      lang="ja">
+      xmlns:p="tapestry:parameter"
+      lang="${currentLocale.language}">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -10,6 +11,33 @@
 </head>
 <body>
 <section class="hero is-success">
+    <div class="hero-head">
+        <nav class="navbar is-success">
+            <div class="container">
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">${currentLangLabel}</a>
+
+                            <div class="navbar-dropdown">
+                                <t:loop source="availableLangs" value="langView">
+                                    <t:if test="langView.current" negate="true">
+                                        <t:actionlink t:id="changeLang" context="langView.languageTag"
+                                                      class="navbar-item dropdown-item">
+                                            ${langView.label}
+                                        </t:actionlink>
+                                        <p:else>
+                                            <a class="navbar-item dropdown-item is-active">${langView.label}</a>
+                                        </p:else>
+                                    </t:if>
+                                </t:loop>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
     <div class="hero-body">
         <div class="container">
             <h1 class="title">Tapestry5 practice</h1>
