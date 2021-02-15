@@ -1,0 +1,58 @@
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="${message:title.messageCatalog}">
+    <section class="section">
+        <h1 class="title">${message:title.messageCatalog}</h1>
+
+        <article class="message is-dark">
+            <div class="message-header">
+                <p>Message Catalog</p>
+            </div>
+            <div class="message-body">
+                <div>
+                    Message Catalogを使うことで文言を様々な言語に対応させることができます。
+                </div>
+                <div>
+                    アプリケーション全体のMessage Catalogはデフォルトでは<span class="tag">WEB-INF/app_&lt;lang&gt;.properties</span>に置かれ、
+                    対応する言語のファイルがなかったり、対応する言語のファイルにメッセージが定義されていなければ、
+                    <span class="tag">WEB-INF/app.properties</span>を参照します
+                </div>
+                <div>
+                    メッセージは<span class="tag">key=value</span>の形式で定義します。
+                </div>
+                <pre>
+                    en=English
+                    ja=Japanese
+                </pre>
+                <a href="https://tapestry.apache.org/localization.html#Localization-ComponentMessageCatalogs">https://tapestry.apache.org/localization.html#Localization-ComponentMessageCatalogs</a>
+            </div>
+        </article>
+
+        <article class="message is-dark">
+            <div class="message-header">
+                <p>${message:localization.section1.title}</p>
+            </div>
+            <div class="message-body"><t:outputraw value="${message:localization.section1.body}"/></div>
+            <pre>
+                $<t:outputraw value="'{message:localization.section1.body}'"/>
+            </pre>
+        </article>
+
+        <article class="message is-dark">
+            <div class="message-header">
+                <p>${title2}</p>
+            </div>
+            <div class="message-body">
+                ${body2}
+                <pre>
+                    @Inject
+                    private Messages messages;
+                    <t:textoutput value="' '"/>
+                    public getMessage
+                    <t:textoutput value="' '"/>
+                    public String getTitle2() {
+                    <t:outputraw value="'    '"/>return messages.get("localization.section2.title");
+                    }
+                </pre>
+            </div>
+        </article>
+    </section>
+</t:base>

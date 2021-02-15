@@ -4,6 +4,7 @@
         <li><t:pagelink page="sample">/sample</t:pagelink></li>
         <li><t:pagelink page="persistence" context="['abc', 7]">/persistence/abc/7</t:pagelink></li>
         <li><t:pagelink page="ioc/IoC">/ioc/IoC</t:pagelink></li>
+        <li><t:pagelink page="localization/MessageCatalog">/localization/MessageCatalog</t:pagelink></li>
         <li><t:pagelink page="parameter/ParameterSample">/parameter/ParameterSample</t:pagelink></li>
         <li><t:pagelink page="servicestatus">/servicestatus</t:pagelink></li>
         <li><t:pagelink page="exceptionreport">/exceptionreport</t:pagelink></li>
