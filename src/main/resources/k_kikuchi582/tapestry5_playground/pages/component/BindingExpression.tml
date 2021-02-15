@@ -1,0 +1,96 @@
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="${message:title.bindingExpression}">
+    <section class="section">
+        <h1 class="title">${message:title.bindingExpression}</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Binding Expressionとは</p>
+            </div>
+            <div class="message-body">
+                tapestryのテンプレート(.tml)上でページクラスやコンポーネントクラス、ファイルやメッセージカタログの値を参照する方法です。
+                <span class="tag"><t:outputraw value="'$'"/>{prefix:~}</span>という記法で直接テンプレートに埋め込んだり、コンポーネントのパラメータとして使うことができます。
+                prefixを使うことでどんな種類の値を参照するかを選択することができます。
+                このページでは代表的なprefixのみを紹介します。
+                他のprefixは
+                <a href="https://tapestry.apache.org/component-parameters.html#ComponentParameters-BindingExpressions">
+                    https://tapestry.apache.org/component-parameters.html#ComponentParameters-BindingExpressions
+                </a>を参照してください。
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>prop:</p>
+            </div>
+            <div class="message-body">
+                <span class="tag"><t:outputraw value="'$'"/>{~}</span>を使うときやコンポーネントのパラメータのデフォルトです。
+                Property Expressionsを使用します。
+                <a href="https://tapestry.apache.org/property-expressions.html">
+                    https://tapestry.apache.org/property-expressions.html
+                </a>
+                <pre>
+                    <t:outputraw value="'$'"/>{text}
+                </pre>
+                <div>${text}</div>
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>message:</p>
+            </div>
+            <div class="message-body">
+                <t:pagelink page="localization/MessageCatalog">メッセージカタログ</t:pagelink>からメッセージを取得します。
+                <a href="https://tapestry.apache.org/localization.html">
+                    https://tapestry.apache.org/localization.html
+                </a>
+                <pre>
+                    <t:outputraw value="'$'"/>{message:bindingExpression.message}
+                </pre>
+                <div>${message:bindingExpression.message}</div>
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>literal:</p>
+            </div>
+            <div class="message-body">
+                文字列を直接書くことができます。
+                <pre>
+                    &lt;t:textoutput value="literal:りてらる"/&gt;
+                </pre>
+                <div><t:textoutput value="literal:りてらる"/></div>
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>asset:</p>
+            </div>
+            <div class="message-body">
+                <div>
+                    アセットファイルへの相対パスを指定します。
+                </div>
+                <pre>
+                    &lt;img src="<t:outputraw value="'$'"/>{asset:./img/koke_01.jpg}"/&gt;
+                </pre>
+                <img src="${asset:./img/koke_01.jpg}" title="こけ"/>
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>context:</p>
+            </div>
+            <div class="message-body">
+                コンテキストルートからのパスを指定します。
+                <pre>
+                    &lt;img src="<t:outputraw value="'$'"/>{context:/img/neko_01.jpeg}"/&gt;
+                </pre>
+                <img src="${context:/img/neko_01.jpeg}" title="ねこ"/>
+            </div>
+        </article>
+
+    </section>
+</t:base>
