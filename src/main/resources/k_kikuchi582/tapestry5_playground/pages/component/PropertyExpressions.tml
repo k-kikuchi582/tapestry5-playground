@@ -1,0 +1,97 @@
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="${message:title.propertyExpression}">
+    <section class="section">
+        <h1 class="title">${message:title.propertyExpression}</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>PropertyExpressionsとは</p>
+            </div>
+            <div class="message-body">
+                ページクラスまたはコンポーネントクラスのデータをTapestryのテンプレート(.tml)で扱うための記法です。<br/>
+                <a href="https://tapestry.apache.org/property-expressions.html">
+                    https://tapestry.apache.org/property-expressions.html
+                </a>
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>プロパティ</p>
+            </div>
+            <div class="message-body">
+                クラス側で定義されたgetメソッドから値を取得します。<br/>
+                setメソッドが定義されてるプロパティをコンポーネントに渡し、
+                渡したプロパティをコンポーネント内で再代入するとsetメソッドが呼ばれてクラス側のプロパティも更新されます。
+                getメソッドとsetメソッドの名前は (get|set)&lt;先頭を大文字にしたプロパティ名&gt; のようにします。<br/>
+                is&lt;先頭を大文字にしたプロパティ名&gt;メソッドを通してアクセスすることもできます。
+                <pre class="mt-2">
+                    &lt;t:show value="fooBar"/&gt;<br/>
+                    &lt;t:show value="english"/&gt;
+                </pre>
+                <div class="mt-2 is-flex is-flex-wrap-wrap gap-2">
+                    <t:show value="fooBar"/>
+                    <t:show value="english"/>
+                </div>
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>定数</p>
+            </div>
+            <div class="message-body">
+                以下の定数を使うことができます。<br/>
+                'true','false',null,integer,decimal,'string'
+                <pre class="mt-2">
+                    &lt;t:show value="true"/&gt;<br/>
+                    &lt;t:show value="false"/&gt;<br/>
+                    &lt;t:show value="null"/&gt;<br/>
+                    &lt;t:show value="123"/&gt;<br/>
+                    &lt;t:show value="1.23"/&gt;<br/>
+                    &lt;t:show value="'string-literal'"/&gt;<br/>
+                </pre>
+                <div class="mt-2 is-flex is-flex-wrap-wrap gap-2">
+                    <t:show value="true"/>
+                    <t:show value="false"/>
+                    <t:show value="null"/>
+                    <t:show value="123"/>
+                    <t:show value="1.23"/>
+                    <t:show value="'string-literal'"/>
+                </div>
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>メソッド呼び出し</p>
+            </div>
+            <div class="message-body">
+                クラス側に定義されたメソッドを呼び出すこともできます。
+                <pre class="mt-2">
+                    &lt;t:show value="getCurrentDateTime()"/&gt;
+                </pre>
+                <div class="mt-2 is-flex is-flex-wrap-wrap gap-2">
+                    <t:show value="getCurrentDateTime()"/>
+                </div>
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>プロパティチェイン</p>
+            </div>
+            <div class="message-body">
+                プロパティやメソッドの呼び出しを'.'で並べることができます。<br/>
+                '?.'を使うことで'?.'の手前がnullなら全体をnullとして評価するようになります。
+                <pre class="mt2">
+                    &lt;t:show value="currentDateTime.plusDays(10).toLocalDate()"/&gt;
+                    &lt;t:show value="list?.size()"/&gt;
+                </pre>
+                <div class="mt-2 is-flex is-flex-wrap-wrap gap-2">
+                    <t:show value="currentDateTime.plusDays(10).toLocalDate()"/>
+                    <t:show value="list?.size()"/>
+                </div>
+            </div>
+        </article>
+    </section>
+</t:base>

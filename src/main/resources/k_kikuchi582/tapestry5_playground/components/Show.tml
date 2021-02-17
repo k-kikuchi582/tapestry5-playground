@@ -1,0 +1,11 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">${type}</p>
+        </header>
+        <div class="card-content">
+            <div class="content">${value}</div>
+        </div>
+    </div>
+</t:container>
+

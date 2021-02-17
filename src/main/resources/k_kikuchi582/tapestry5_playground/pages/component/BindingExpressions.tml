@@ -8,8 +8,8 @@
             </div>
             <div class="message-body">
                 tapestryのテンプレート(.tml)上でページクラスやコンポーネントクラス、ファイルやメッセージカタログの値を参照する方法です。
-                <span class="tag"><t:outputraw value="'$'"/>{prefix:~}</span>という記法で直接テンプレートに埋め込んだり、コンポーネントのパラメータとして使うことができます。
-                prefixを使うことでどんな種類の値を参照するかを選択することができます。
+                <span class="tag is-white"><t:outputraw value="'$'"/>{prefix:~}</span>という記法で直接テンプレートに埋め込んだり、コンポーネントのパラメータとして使うことができます。
+                prefixを使うことでどんな種類の値を参照するかを選択することができます。<br/>
                 このページでは代表的なprefixのみを紹介します。
                 他のprefixは
                 <a href="https://tapestry.apache.org/component-parameters.html#ComponentParameters-BindingExpressions">
@@ -23,15 +23,15 @@
                 <p>prop:</p>
             </div>
             <div class="message-body">
-                <span class="tag"><t:outputraw value="'$'"/>{~}</span>を使うときやコンポーネントのパラメータのデフォルトです。
-                Property Expressionsを使用します。
+                <span class="tag is-white"><t:outputraw value="'$'"/>{~}</span>を使うときやコンポーネントのパラメータのデフォルトです。
+                <t:pagelink page="component/PropertyExpressions">Property Expressions</t:pagelink>を使用します。
                 <a href="https://tapestry.apache.org/property-expressions.html">
                     https://tapestry.apache.org/property-expressions.html
                 </a>
-                <pre>
+                <pre class="mt-2">
                     <t:outputraw value="'$'"/>{text}
                 </pre>
-                <div>${text}</div>
+                <div class="mt-2">${text}</div>
             </div>
         </article>
 
@@ -44,10 +44,10 @@
                 <a href="https://tapestry.apache.org/localization.html">
                     https://tapestry.apache.org/localization.html
                 </a>
-                <pre>
+                <pre class="mt-2">
                     <t:outputraw value="'$'"/>{message:bindingExpression.message}
                 </pre>
-                <div>${message:bindingExpression.message}</div>
+                <div class="mt-2">${message:bindingExpression.message}</div>
             </div>
         </article>
 
@@ -57,10 +57,10 @@
             </div>
             <div class="message-body">
                 文字列を直接書くことができます。
-                <pre>
+                <pre class="mt-2">
                     &lt;t:textoutput value="literal:りてらる"/&gt;
                 </pre>
-                <div><t:textoutput value="literal:りてらる"/></div>
+                <div class="mt-2"><t:textoutput value="literal:りてらる"/></div>
             </div>
         </article>
 
@@ -72,10 +72,10 @@
                 <div>
                     アセットファイルへの相対パスを指定します。
                 </div>
-                <pre>
+                <pre class="mt-2">
                     &lt;img src="<t:outputraw value="'$'"/>{asset:./img/koke_01.jpg}"/&gt;
                 </pre>
-                <img src="${asset:./img/koke_01.jpg}" title="こけ"/>
+                <img src="${asset:./img/koke_01.jpg}" title="こけ" class="mt-2"/>
             </div>
         </article>
 
@@ -85,10 +85,10 @@
             </div>
             <div class="message-body">
                 コンテキストルートからのパスを指定します。
-                <pre>
+                <pre class="mt-2">
                     &lt;img src="<t:outputraw value="'$'"/>{context:/img/neko_01.jpeg}"/&gt;
                 </pre>
-                <img src="${context:/img/neko_01.jpeg}" title="ねこ"/>
+                <img src="${context:/img/neko_01.jpeg}" title="ねこ" class="mt-2"/>
             </div>
         </article>
 
