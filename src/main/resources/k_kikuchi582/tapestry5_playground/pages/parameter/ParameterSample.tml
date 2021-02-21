@@ -1,24 +1,46 @@
 <t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'パラメータ'">
     <h1 class="title">パラメータ</h1>
-    <div class="columns is-multiline">
-        <div class="column">
-            <t:parameter.Parameters
-                    parama="literal:A"
-                    b="'B'"
-                    paramc="'paramc'"
-                    paramd="D"
-                    paramf="'F'"/>
+
+    <article class="message">
+        <div class="message-header">
+            <p>コンポーネントのパラメータ</p>
         </div>
-        <!-- paramCはrequiredなので省略できない -->
-        <!-- paramfはallowNull=falseなのでnullは不可 -->
-<!--        <div class="column">-->
-<!--            <t:parameter.parameters-->
-<!--                    parama="literal:A"-->
-<!--                    b="'B'"-->
-<!--                    paramd="D"-->
-<!--                    paramf="null"/>-->
-<!--        </div>-->
-    </div>
+        <div class="message-body">
+            コンポーネントにパラメータを宣言することで、コンポーネントの動作を外部から変更することができます。<br/>
+            パラメータは<span class="tag is-white">@Parameter</span>アノテーションを付与したフィールドとして宣言します。<br/>
+            パラメータとして宣言したフィールドはprivateでなければいけません。<br/>
+            パラメータの名前はデフォルトではフィールド名ですが、<span class="tag is-white">@Parameter</span>アノテーションの
+            <span class="tag is-white">name</span>プロパティを使うことで変更することもできます。<br/>
+            パラメータには<t:pagelink page="component/BindingExpressions">BindingExpressions</t:pagelink>で値を与えることができます。
+            また、<span class="tag is-white">@Parameter</span>アノテーションの<span class="tag is-white">defaultPrefix</span>プロパティを
+            使うことでデフォルトのプレフィックスを変更することもできます。<br/>
+            パラメータはデフォルトでは省略可能ですが、<span class="tag is-white">@Parameter</span>アノテーションの
+            <span class="tag is-white">required</span>プロパティを使うことで省略不可にすることもできます。<br/>
+
+            <a href="https://tapestry.apache.org/component-parameters.html">
+                https://tapestry.apache.org/component-parameters.html
+            </a>
+            <pre class="mt-2">
+                <t:outputraw value="parametersClassContent"/>
+            </pre>
+            <pre class="mt-2">
+                &lt;t:parameter.Parameters parama="literal:A" b="'B'" paramc="'paramc'" paramd="D" paramf="'F'"/&gt;
+            </pre>
+            <div class="mt-2">
+                <t:parameter.Parameters
+                        parama="literal:A"
+                        b="'B'"
+                        paramc="'paramc'"
+                        paramd="D"
+                        paramf="'F'"/>
+            </div>
+            <pre class="mt-2">
+                // cはrequired=trueなので省略不可
+                // fはallowNull=falseなのでnullは不可
+                 &lt;t:parameter.parameters parama="literal:A" b="'B'" paramd="D" paramf="null"/&gt;
+            </pre>
+        </div>
+    </article>
 
     <h1 class="title">パラメータの双方向性</h1>
     <div class="columns">
