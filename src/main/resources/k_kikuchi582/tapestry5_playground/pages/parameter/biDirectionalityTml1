@@ -1,0 +1,10 @@
+<t:zone t:id="countZone" update="show">
+    <div class="columns">
+        <div class="column">${count}</div>
+        <div class="column">
+            <t:parameter.ParameterBiDirectional count="count"
+                                                zoneId="countZone"
+                                                zone="countZone"/>
+        </div>
+    </div>
+</t:zone>

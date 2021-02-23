@@ -1,14 +1,3 @@
-package k_kikuchi582.tapestry5_playground.components.parameter;
-
-import org.apache.tapestry5.BindingConstants;
-import org.apache.tapestry5.EventConstants;
-import org.apache.tapestry5.annotations.*;
-import org.apache.tapestry5.corelib.components.Zone;
-import org.apache.tapestry5.ioc.annotations.Inject;
-import org.apache.tapestry5.services.Request;
-
-import java.util.function.Consumer;
-
 public class ParameterBiDirectional {
     @Inject
     private Request request;

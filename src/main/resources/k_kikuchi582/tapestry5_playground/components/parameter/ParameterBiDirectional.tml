@@ -1,6 +1,6 @@
 <t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
     <div class="box">
-        <t:form t:id="countForm">
+        <t:form t:id="countForm" t:zone="${zoneId}">
             <div class="columns">
                 <div class="column">${count}</div>
                 <div class="column">

@@ -24,7 +24,8 @@ configurations {
 dependencies {
     // https://mvnrepository.com/artifact/commons-io/commons-io
     implementation group: 'commons-io', name: 'commons-io', version: '2.8.0'
-
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-text
+    implementation group: 'org.apache.commons', name: 'commons-text', version: '1.9'
 
     // https://mvnrepository.com/artifact/org.apache.tapestry/tapestry-core
     implementation group: 'org.apache.tapestry', name: 'tapestry-core', version: '5.1.0.0'

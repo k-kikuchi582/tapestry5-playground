@@ -1,0 +1,12 @@
+<div class="mt-2">
+    <t:zone t:id="wrapperCountZone" update="show">
+        <div class="columns">
+            <div class="column">${wrapper.count}</div>
+            <div class="column">
+                <t:parameter.ParameterBiDirectional count="wrapper.count"
+                                                    zoneId="wrapperCountZone"
+                                                    zone="wrapperCountZone"/>
+            </div>
+        </div>
+    </t:zone>
+</div>
