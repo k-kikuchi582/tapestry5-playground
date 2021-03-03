@@ -1,0 +1,33 @@
+<t:container
+        xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd"
+        xmlns:p="tapestry:parameter">
+    <div class="tabs-container" id="${id}">
+        <div class="tabs is-boxed is-small">
+            <ul>
+                <t:loop source="headers" value="header" index="index">
+                    <t:if test="first">
+                        <li class="is-active">
+                            <a id="${id}-${index}-tab"><span>${header}</span></a>
+                        </li>
+                        <p:else>
+                            <li>
+                                <a id="${id}-${index}-tab"><span>${header}</span></a>
+                            </li>
+                        </p:else>
+                    </t:if>
+                </t:loop>
+            </ul>
+        </div>
+
+        <div class="tabs-bodies">
+            <t:loop source="bodies" value="body" index="index">
+                <t:if test="first">
+                    <div class="tabs-body is-active" id="${id}-${index}-body"><t:delegate to="body"/></div>
+                    <p:else>
+                        <div class="tabs-body" id="${id}-${index}-body"><t:delegate to="body"/></div>
+                    </p:else>
+                </t:if>
+            </t:loop>
+        </div>
+    </div>
+</t:container>

@@ -1,5 +1,7 @@
 package k_kikuchi582.tapestry5_playground.components;
 
+import org.apache.tapestry5.BindingConstants;
+import org.apache.tapestry5.Block;
 import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
@@ -14,6 +16,10 @@ public class Base {
     @Parameter(value = "'Tapestry5_playground'")
     @Property
     private String title;
+
+    @Parameter(defaultPrefix = BindingConstants.BLOCK)
+    @Property
+    private Block head;
 
     @Inject
     private Messages messages;

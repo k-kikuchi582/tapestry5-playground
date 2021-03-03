@@ -1,0 +1,118 @@
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd"
+        title="'ページとコンポーネント'">
+    <section class="section">
+        <h1 class="title">ページとコンポーネント</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>ページとコンポーネント</p>
+            </div>
+            <div class="message-body">
+                ウェブアプリケーションフレームワークとしてのtapestryは、ページとコンポーネントという構成要素を用いて画面を構成します。<br/>
+                ページはあるURLに対応する画面を構成するものであり、コンポーネントはページを構成する再利用可能な部品です。<br/>
+                ページは<span class="tag is-white">&lt;tapestry.app-package&gt;.pages</span>パッケージ配下、
+                コンポーネントは<span class="tag is-white">&lt;tapestry.app-package&gt;.components</span>パッケージ配下にあるクラスとして作成します。<br/>
+                ページ、クラスともにクラスだけで画面を構成することができますが、HTMLを書き出す部分をtapestryのテンプレート(tml)を使って表現することもできます。<br/>
+                tmlはクラスと同じパッケージに配置し、名前は<span class="tag is-white">&lt;クラス名&gt;.tml</span>とします。
+                <a href="https://tapestry.apache.org/component-parameters.html#ComponentParameters-BindingExpressions">
+                    https://tapestry.apache.org/component-parameters.html#ComponentParameters-BindingExpressions
+                </a>を参照してください。
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>ページとコンポーネントのレンダリング</p>
+            </div>
+            <div class="message-body">
+                ページとコンポーネントのレンダリングは以下のようなフェーズに別れます<br/>
+                各フェーズで処理を行いたい場合は対応するメソッドをクラスに実装します。
+                メソッドは<span class="tag is-white">MarkupWriter</span>を引数に取ることができます。
+                <table class="table is-hoverable">
+                    <thead>
+                    <tr>
+                        <th>メソッド名</th>
+                        <th>アノテーション</th>
+                        <th>タイミング</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>setupRender</td>
+                        <td>@SetupRender</td>
+                        <td>セットアップ</td>
+                    </tr>
+                    <tr>
+                        <td>beginRender</td>
+                        <td>@BeginRender</td>
+                        <td>レンダの最初</td>
+                    </tr>
+                    <tr>
+                        <td>beginRenderTemplate</td>
+                        <td>@BeginRenderTemplate</td>
+                        <td>.tmlをレンダする前</td>
+                    </tr>
+                    <tr>
+                        <td>beginRenderBody</td>
+                        <td>@BeginRenderBody</td>
+                        <td>bodyをレンダする前</td>
+                    </tr>
+                    <tr>
+                        <td>afterRenderBody</td>
+                        <td>@AfterRenderBody</td>
+                        <td>bodyをレンダした後</td>
+                    </tr>
+                    <tr>
+                        <td>afterRenderTemplate</td>
+                        <td>@AfterRenderTemplate</td>
+                        <td>.tmlをレンダした後</td>
+                    </tr>
+                    <tr>
+                        <td>afterRender</td>
+                        <td>@AfterRender</td>
+                        <td>レンダの最後</td>
+                    </tr>
+                    <tr>
+                        <td>cleanupRender</td>
+                        <td>@CleanupRender</td>
+                        <td>後処理</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <a href="https://tapestry.apache.org/component-rendering.html">
+                    https://tapestry.apache.org/component-rendering.html
+                </a>
+
+                <div class="mt2">
+                    <t:tabs headers="['RenderPhases','RenderPhases.java',
+                    'RenderPhasesWithTemplate','RenderPhasesWithTemplate.java', 'RenderPhasesWithTemplate.tml']"
+                            bodies="tabsBodies"/>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <t:block t:id="renderPhases">
+        <t:component.RenderPhases number="3" current="index">
+            <div class="box">${index}</div>
+        </t:component.RenderPhases>
+    </t:block>
+
+    <t:block t:id="renderPhasesJava">
+        <t:highlight text="renderPhasesJavaText" lang="java"/>
+    </t:block>
+
+    <t:block t:id="renderPhasesWithTemplate">
+        <t:component.RenderPhasesWithTemplate number="3" current="index">
+            <div class="box">${index}</div>
+        </t:component.RenderPhasesWithTemplate>
+    </t:block>
+
+    <t:block t:id="renderPhasesWithTemplateJava">
+        <t:highlight text="renderPhasesWithTemplateJavaText" lang="java"/>
+    </t:block>
+
+    <t:block t:id="renderPhasesWithTemplateTml">
+        <t:highlight text="renderPhasesWithTemplateTmlText" lang="html"/>
+    </t:block>
+</t:base>

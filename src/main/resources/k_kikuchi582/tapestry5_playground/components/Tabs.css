@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+.tabs-body:not(.is-active) {
+    display: none;
+}

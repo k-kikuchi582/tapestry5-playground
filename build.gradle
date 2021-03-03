@@ -52,3 +52,13 @@ gretty {
     logDir = './logs'
 //    extraResourceBase 'src/main/resources'
 }
+
+processResources {
+    doLast {
+        copy {
+            from sourceSets.main.java
+            into sourceSets.main.output.resourcesDir
+            include '**/*.java'
+        }
+    }
+}

@@ -9,6 +9,9 @@
     <title>${title}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
     <link rel="stylesheet" href="${context:/css/base.css}"/>
+    <t:if test="head">
+        <t:delegate to="head"/>
+    </t:if>
 </head>
 <body>
 <section class="hero is-success">
