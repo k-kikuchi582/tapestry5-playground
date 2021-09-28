@@ -1,0 +1,29 @@
+// メソッド名で指定
+void onActivate() {
+    ～
+}
+
+// アノテーションで指定
+@OnEvent(EventConstants.ACTIVATE)
+void onActivate() {
+    ～
+}
+
+// 引数をとる
+void onActivate(int id) {
+    ～
+}
+
+// 引数をEventContextでとる
+void onActivate(EventContext context) {
+    ～
+}
+
+// 戻り値を返す
+// (例)何かの条件に引っかかった時は別のページに飛ばす
+Object onActivate() {
+    if (～) {
+        return "<ページ名>"
+    }
+    return null;
+}

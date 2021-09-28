@@ -83,7 +83,7 @@
                     https://tapestry.apache.org/component-rendering.html
                 </a>
 
-                <div class="mt2">
+                <div class="mt-2">
                     <t:tabs headers="['RenderPhases','RenderPhases.java',
                     'RenderPhasesWithTemplate','RenderPhasesWithTemplate.java', 'RenderPhasesWithTemplate.tml']"
                             bodies="tabsBodies"/>

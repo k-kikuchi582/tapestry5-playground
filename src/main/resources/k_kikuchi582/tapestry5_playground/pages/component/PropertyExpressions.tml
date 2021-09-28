@@ -83,7 +83,7 @@
             <div class="message-body">
                 プロパティやメソッドの呼び出しを'.'で並べることができます。<br/>
                 '?.'を使うことで'?.'の手前がnullなら全体をnullとして評価するようになります。
-                <pre class="mt2">
+                <pre class="mt-2">
                     &lt;t:show value="currentDateTime.plusDays(10).toLocalDate()"/&gt;
                     &lt;t:show value="list?.size()"/&gt;
                 </pre>

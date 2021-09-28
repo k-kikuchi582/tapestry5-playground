@@ -7,6 +7,7 @@ import org.apache.tapestry5.Asset;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
 public class Utils {
     public static String getText(Asset asset) throws IOException {
@@ -14,7 +15,7 @@ public class Utils {
         try (InputStream input = asset.getResource().openStream()) {
             IOUtils.copy(input, output);
         }
-        return escapeAsHtml(output.toString());
+        return escapeAsHtml(output.toString(StandardCharsets.UTF_8.name()));
     }
 
     private static String escapeAsHtml(String text) {

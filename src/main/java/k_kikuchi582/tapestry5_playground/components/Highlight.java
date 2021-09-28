@@ -39,7 +39,7 @@ public class Highlight {
         writer.element("pre");
         {
             Element code = writer.element("code");
-            code.addClassName("language-" + lang);
+            code.addClassName("language-" + lang, "hljs");
             code.attribute("id", id);
             writer.writeRaw(text);
             writer.end();

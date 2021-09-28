@@ -1,0 +1,79 @@
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd"
+        title="'Page Activation'">
+    <section class="section">
+        <h1 class="title">Page ActivationとPassivate</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Page Activation</p>
+            </div>
+            <div class="message-body">
+                ページにリクエストが飛んだ際に、レンダの前に実行する処理です。<br/>
+                パラメータを受け取ってページの初期化処理や、リクエストが適切かどうかの検証(権限チェック等)に利用することができます。<br/>
+                <span class="tag is-white">onActivate</span>という名前のメソッド、
+                または<span class="tag is-white">@OnEvent(EventConstants.ACTIVATE)</span>アノテーションがついたメソッドがPageActivationの
+                メソッドとして扱われます。<br/>
+                PageActivationもイベントハンドラの一種なので、他のイベントハンドラと同様に引数をとったり、
+                戻り値によってレスポンスを制御したりすることができます。<br/>
+                詳しくは
+                <a href="https://tapestry.apache.org/page-navigation.html#PageNavigation-PageActivation">
+                    https://tapestry.apache.org/page-navigation.html#PageNavigation-PageActivation
+                </a>
+                を参照してください。
+
+                <h5 class="mt-5 mb-1 subtitle">
+                    PageActivationとPagePassivateの例
+                </h5>
+                <div class="is-size-7">
+                    ボタンを押すとボタンに応じたPagePassivateメソッドが実行され、ContextとしてPagePassivateメソッドに渡されます。
+                    押したボタンに応じたContextがURLに付与されるのを確かめてください。
+                </div>
+                <div class="box mt-2">
+                    <div>
+                        <span>count:${count}</span>
+                        <span class="ml-2">
+                            values:
+                            <t:loop source="values" value="value">
+                                ${value},
+                             </t:loop>
+                        </span>
+                    </div>
+                    <div class="mt-1 buttons are-small">
+                        <t:actionlink t:id="zero" class="button small">zero</t:actionlink>
+                        <t:actionlink t:id="one" class="button small">one</t:actionlink>
+                        <t:actionlink t:id="two" class="button small">two</t:actionlink>
+                    </div>
+                </div>
+
+                <div class="mt-2">
+                    <h5 class="subtitle mb-3">PageActivationの例</h5>
+                    <t:highlight text="pageActivationJavaText" lang="java"/>
+                </div>
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Passivate</p>
+            </div>
+            <div class="message-body">
+                イベントハンドラでnullを返した時など、同じページを暗黙的に返す場合に参照されるパラメータを返すメソッドです。<br/>
+                このメソッドの戻り値がActivationメソッドにパラメータとして引き渡されます。<br/>
+                複数のパラメータを渡す必要がある場合は、配列かListの形で返す必要があります。<br/>
+                <span class="tag is-white">onPassivate</span>という名前のメソッド、
+                または<span class="tag is-white">@OnEvent(EventConstants.PASSIVATE)</span>
+                アノテーションがついたメソッドがPassivateメソッドとして扱われます。<br/>
+                詳しくは
+                <a href="https://tapestry.apache.org/page-navigation.html#PageNavigation-PageRenderRequests">
+                    https://tapestry.apache.org/page-navigation.html#PageNavigation-PageRenderRequests
+                </a>
+                を参照してください。
+
+                <div class="mt-2">
+                    <h5 class="subtitle mb-3">PagePassivateメソッドの例</h5>
+                    <t:highlight text="pagePassivateJavaText" lang="java"/>
+                </div>
+            </div>
+        </article>
+    </section>
+</t:base>

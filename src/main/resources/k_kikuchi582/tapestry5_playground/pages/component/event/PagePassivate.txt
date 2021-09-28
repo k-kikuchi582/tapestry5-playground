@@ -1,0 +1,10 @@
+// メソッド名で指定
+Object[] onPassivate() {
+    return new Object[]{ 1, 2, 3 };
+}
+
+// アノテーションを使って指定
+@OnEvent(EventConstants.PASSIVATE)
+Object[] onPassivate() {
+    return new Object[]{ 1, 2, 3 };
+}

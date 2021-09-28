@@ -16,6 +16,15 @@ test {
     useJUnitPlatform()
 }
 
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of( 8 )
+    }
+}
+
 configurations {
     // javassistをjava8に対応しているバージョンに上げるために、tapestry-coreがもともと依存しているバージョンは除外する
     all*.exclude group: 'javassist', module: 'javassist'
@@ -51,6 +60,9 @@ gretty {
     servletContainer = 'jetty9'
     logDir = './logs'
 //    extraResourceBase 'src/main/resources'
+    debugPort = 5005
+    // trueにするとデバッグ接続されるまでサーバの起動が始まらない
+    debugSuspend = false
 }
 
 processResources {

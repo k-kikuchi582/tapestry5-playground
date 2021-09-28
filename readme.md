@@ -4,6 +4,9 @@ javaのWebアプリケーションフレームワーク
 
 諸般の事情で`5.1.0.0`に準拠しています。
 
+### 実行環境
+jdk8
+
 ### 実行方法
 `./gradlew appRun`
 
@@ -28,8 +31,15 @@ http://localhost:8080/tapestry5-practice にアクセスする
 正規の方法以外でプロセスを止めると8080ポートが開放されないことがあります。
 その場合は8080ポートを使用しているプロセスを直接止めてください。
 
+###### あるポートを使用しているプロセスの調べ方(Windows)
+`netstat -ano | find '":8080"'` (Powershell)\
+`netstat -ano | find ":8080"` (cmd)
+
+###### あるプロセスIDのプロセスを強制終了する(Windows)
+`taskkill /F /PID <プロセスID>`
+
 ### TODO
-- [ ] page activation
+- [x] page activation
 - [ ] component event
     - [ ] handler
     - [ ] response
