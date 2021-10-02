@@ -1,0 +1,14 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <t:zone t:id="eventHandlerNamingConventionZone" id="eventHandlerNamingConventionZone" update="show">
+            <t:form t:id="eventHandlerNamingConventionForm" zone="eventHandlerNamingConventionZone">
+                <div class="notification">${message}</div>
+                <div><t:actionlink t:id="apple" zone="eventHandlerNamingConventionZone">🍎 Apple</t:actionlink></div>
+                <div><t:eventlink t:id="orange" zone="eventHandlerNamingConventionZone">🍊 Orange</t:eventlink></div>
+                <div><t:eventlink event="grape" zone="eventHandlerNamingConventionZone">🍇 Grape</t:eventlink></div>
+                <div><t:submit t:id="peach" value="🍑 Peach" class="button is-small"/></div>
+            </t:form>
+        </t:zone>
+    </div>
+</t:container>
+

@@ -1,0 +1,14 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <t:zone t:id="eventHandlerSampleZone" id="eventHandlerSampleZone" update="show">
+            <t:form t:id="eventHandlerSampleForm" zone="eventHandlerSampleZone">
+                <div class="notification">${message}</div>
+                <div><t:actionlink t:id="apple" zone="eventHandlerSampleZone">🍎 Apple</t:actionlink></div>
+                <div><t:eventlink t:id="orange" zone="eventHandlerSampleZone">🍊 Orange</t:eventlink></div>
+                <div><t:eventlink event="grape" zone="eventHandlerSampleZone">🍇 Grape</t:eventlink></div>
+                <div><t:submit t:id="peach" value="🍑 Peach" class="button is-small"/></div>
+            </t:form>
+        </t:zone>
+    </div>
+</t:container>
+

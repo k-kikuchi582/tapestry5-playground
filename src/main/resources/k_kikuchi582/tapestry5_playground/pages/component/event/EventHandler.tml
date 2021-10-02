@@ -1,0 +1,168 @@
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Event Handler'">
+    <section class="section">
+        <h1 class="title">Event Handler</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Event Handler</p>
+            </div>
+            <div class="message-body">
+                コンポーネントイベントを受け取るメソッドです。<br/>
+                <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/ActionLink.html">ActionLink</a>,
+                <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/EventLink.html">EventLink</a>,
+                <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Submit.html">Submit</a>
+                といったコンポーネントをクリックしたときや、 ページがリクエストを受けた際などに発火するメソッドを定義できます。<br/>
+                代表的なイベントとそれに対応するイベントハンドラとしては以下のようなものがあります。<br/>
+                詳しくは
+                <a href="https://tapestry.apache.org/component-events.html#ComponentEvents-EventHandlerMethods">
+                    https://tapestry.apache.org/component-events.html#ComponentEvents-EventHandlerMethods
+                </a>
+                を参照してください。
+                <table class="table is-hoverable mt-4">
+                    <thead>
+                    <tr>
+                        <th>イベント</th>
+                        <th>イベントハンドラの名前</th>
+                        <th>イベントハンドラのアノテーション</th>
+                        <th>イベントが発火するタイミングの例</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>action</td>
+                        <td>onActionFrom&lt;コンポーネントID&gt;</td>
+                        <td>@Event(component="&lt;コンポーネントID&gt;")</td>
+                        <td>ActionLinkをクリックしたとき</td>
+                    </tr>
+                    <tr>
+                        <td>selected</td>
+                        <td>onSelectedFrom&lt;コンポーネントID&gt;</td>
+                        <td>@Event(value="selected", component="&lt;コンポーネントID&gt;")</td>
+                        <td>Submitをクリックしたとき</td>
+                    </tr>
+                    <tr>
+                        <td>submit</td>
+                        <td>onSubmitFrom&lt;FormのコンポーネントID&gt;</td>
+                        <td>@Event(value="submit", component="&lt;FormのコンポーネントID&gt;")</td>
+                        <td>フォームがsubmitされたとき。(selectedイベント等より後に実行される。)</td>
+                    </tr>
+                    <tr>
+                        <td>activate</td>
+                        <td>onActivate</td>
+                        <td>@Event(value="activate")</td>
+                        <td>ページがリクエストを受けたとき</td>
+                    </tr>
+                    <tr>
+                        <td>passivate</td>
+                        <td>onPassivate</td>
+                        <td>@Event(value="passivate")</td>
+                        <td>同じページを再度リクエストするとき</td>
+                    </tr>
+                    <tr>
+                        <td>任意のイベント</td>
+                        <td>on&lt;イベント名&gt;From&lt;コンポーネントID&gt;</td>
+                        <td>@Event(value="&lt;イベント名&gt;", component="&lt;コンポーネントID&gt;")</td>
+                        <td>eventパラメータに対応するイベント名を与えられたEventLinkまたは、イベント名をコンポーネントIDに持つEventLinkをクリックしたとき。</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="mt-2">
+                    <t:tabs headers="['EventHandlerSample','EventHandlerSample.java','EventHandlerSample.tml']"
+                            bodies="eventHandlerSampleTabBodies"
+                            bodyMaxHeight="500px"/>
+                </div>
+            </div>
+        </article>
+
+        <t:block t:id="eventHandlerSample">
+            <t:component.event.eventhandlersample/>
+        </t:block>
+
+        <t:block t:id="eventHandlerSampleJava">
+            <t:highlight text="eventHandlerSampleJavaText" lang="java"/>
+        </t:block>
+
+        <t:block t:id="eventHandlerSampleTemplate">
+            <t:highlight text="eventHandlerSampleTemplateText" lang="html"/>
+        </t:block>
+
+        <article class="message">
+            <div class="message-header">
+                <p>イベントハンドラの命名規則</p>
+            </div>
+            <div class="message-body">
+                アノテーションでイベントハンドラを指定しない場合、Tapestryは以下のようなメソッド名を持つメソッドを探します。<br/>
+                <t:tag>on</t:tag> + <t:tag>イベント名の先頭を大文字にしたもの</t:tag> + <t:tag>From</t:tag> + <t:tag>コンポーネントIDの先頭を大文字にしたもの</t:tag><br/>
+                例えば、コンポーネントIDが<t:tag>Save</t:tag>であるような<t:tag>Submit</t:tag>コンポーネントをクリックした場合、<t:tag>onSelectedFromSave</t:tag>メソッドが呼び出されます。<br/>
+                詳しくは
+                <a href="https://tapestry.apache.org/component-events.html#ComponentEvents-MethodNamingConvention">
+                    https://tapestry.apache.org/component-events.html#ComponentEvents-MethodNamingConvention
+                </a>
+                を参照してください。
+
+                <div class="mt-2">
+                    <t:tabs headers="['EventHandlerNamingConvention','EventHandlerNamingConvention.java','EventHandlerNamingConvention.tml']"
+                            bodies="eventHandlerNamingConventionTabBodies"
+                            bodyMaxHeight="500px"/>
+                </div>
+            </div>
+        </article>
+
+        <t:block t:id="eventHandlerNamingConvention">
+            <t:component.event.EventHandlerNamingConvention/>
+        </t:block>
+
+        <t:block t:id="eventHandlerNamingConventionJava">
+            <t:highlight text="eventHandlerNamingConventionJavaText" lang="java"/>
+        </t:block>
+
+        <t:block t:id="eventHandlerNamingConventionTemplate">
+            <t:highlight text="eventHandlerNamingConventionTemplateText" lang="html"/>
+        </t:block>
+
+        <article class="message">
+            <div class="message-header">
+                <p>イベントハンドラの引数</p>
+            </div>
+            <div class="message-body">
+                ActionLink、EventLink、Submitなどのコンポーネントのcontextパラメータに渡した値をイベントハンドラの引数として利用できます。<br/>
+                引数は(int a, String b, ...)のように一づつ受け取ることもできますが、
+                <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/EventContext.html">EventContext</a>の形でまとめて受け取ることもできます。
+                EventContextはコンテキストの数を返す<t:tag>count()</t:tag>メソッドや、i番目のコンテキストを得る<t:tag>get(Claas&lt;T&gt; desiredType, int i)</t:tag>メソッドを持ちます。<br/>
+                詳しくは
+                <a href="https://tapestry.apache.org/component-events.html#ComponentEvents-EventContext">
+                    https://tapestry.apache.org/component-events.html#ComponentEvents-EventContext
+                </a>
+                を参照してください。
+
+                <div class="mt-2">
+                    <t:tabs headers="['EventHandlerArguments','EventHandlerArguments.java','EventHandlerArguments.tml']"
+                            bodies="eventHandlerArgumentsTabBodies"
+                            bodyMaxHeight="500px"/>
+                </div>
+            </div>
+        </article>
+
+        <t:block t:id="eventHandlerArguments">
+            <t:component.event.EventHandlerArguments/>
+        </t:block>
+
+        <t:block t:id="eventHandlerArgumentsJava">
+            <t:highlight text="eventHandlerArgumentsJavaText" lang="java"/>
+        </t:block>
+
+        <t:block t:id="eventHandlerArgumentsTemplate">
+            <t:highlight text="eventHandlerArgumentsTemplateText" lang="html"/>
+        </t:block>
+
+        <article class="message">
+            <div class="message-header">
+                <p>イベントハンドラの戻り値</p>
+            </div>
+            <div class="message-body">
+                イベントハンドラの戻り値によってレスポンスをどのように行うかが決まります。<br/>
+                詳しくはを参照してください。
+            </div>
+        </article>
+    </section>
+</t:base>

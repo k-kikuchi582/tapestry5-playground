@@ -1,0 +1,12 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <t:zone t:id="eventHandlerArgumentsZone" id="eventHandlerArgumentsZone" update="show">
+            <div class="notification">${message}</div>
+            <div><t:eventlink event="noArgs" zone="eventHandlerArgumentsZone">no-arg</t:eventlink></div>
+            <div><t:eventlink event="1arg" context="1" zone="eventHandlerArgumentsZone">1arg(context=[1])</t:eventlink></div>
+            <div><t:eventlink event="2args" context="['context1', 3.14]" zone="eventHandlerArgumentsZone">2args(context=['context1', 3.14])</t:eventlink></div>
+            <div><t:eventlink event="eventContext" context="[3, 'true', '2 h 30 m']" zone="eventHandlerArgumentsZone">eventContext(context=[3, true, '2 h 30 m'])</t:eventlink></div>
+        </t:zone>
+    </div>
+</t:container>
+

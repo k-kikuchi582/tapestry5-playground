@@ -2,7 +2,7 @@
         xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd"
         xmlns:p="tapestry:parameter">
     <div class="tabs-container" id="${id}">
-        <div class="tabs is-boxed is-small">
+        <div class="tabs is-boxed is-small mb-0">
             <ul>
                 <t:loop source="headers" value="header" index="index">
                     <t:if test="first">
@@ -19,7 +19,7 @@
             </ul>
         </div>
 
-        <div class="tabs-bodies">
+        <div class="tabs-bodies" style="${tabBodiesStyle}">
             <t:loop source="bodies" value="body" index="index">
                 <t:if test="first">
                     <div class="tabs-body is-active" id="${id}-${index}-body"><t:delegate to="body"/></div>
