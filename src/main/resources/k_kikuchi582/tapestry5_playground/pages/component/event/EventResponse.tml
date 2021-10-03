@@ -1,0 +1,78 @@
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Event Handler'">
+    <section class="section">
+        <h1 class="title">Event Response</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Event Handler Response</p>
+            </div>
+            <div class="message-body">
+                イベントハンドラが返す値の型によってレスポンスをどのような形でなされるかが決まります
+                <div class="notification is-white mt-2">直近のイベントの戻り値：${responseType}</div>
+                <h5 class="subtitle mt-4 mb-2">Nullまたはvoid</h5>
+                <p>
+                    現在のページを返します。<br/>
+                    <span class="buttons">
+                        <t:eventlink event="null" class="button is-small">null response</t:eventlink>
+                        <t:eventlink event="void" class="button is-small">void response</t:eventlink>
+                    </span>
+                </p>
+                <h5 class="subtitle mt-4 mb-2">String</h5>
+                <p>
+                    その文字列が指すページにリダイレクトします。<br/>
+                    <t:eventlink event="string" class="button is-small">string response</t:eventlink>
+                </p>
+                <h5 class="subtitle mt-4 mb-2">Class</h5>
+                <p>
+                    ページクラスを返すと、そのページにリダイレクトします。<br/>
+                    <t:eventlink event="class" class="button is-small">class response</t:eventlink>
+                </p>
+                <h5 class="subtitle mt-4 mb-2">Pageクラス</h5>
+                <p>
+                    そのページを返します。
+                    <t:tag><a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/annotations/InjectPage.html">@InjectPage</a></t:tag>
+                    アノテーションによってページクラスのインスタンスを取得することができ、 イベントハンドラでPageクラスを返す前に初期化処理を行うことができます。<br/>
+                    <t:eventlink event="page" class="button is-small">page response</t:eventlink>
+                </p>
+                <h5 class="subtitle mt-4 mb-2">HttpError</h5>
+                <p>
+                    エラーを返します。(このサンプルプロジェクトのTapestryのバージョン(5.1.0.0)にはありません。5.2.0からです。)
+                </p>
+                <h5 class="subtitle mt-4 mb-2">LinkResponse</h5>
+                <p>
+                    そのリンクのURLへリダイレクトされます。<br/>
+                    <t:eventlink event="link" class="button is-small">link response</t:eventlink>
+                </p>
+                <h5 class="subtitle mt-4 mb-2">Stream Response</h5>
+                <p>
+                    <t:tag><a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/StreamResponse.html">StreamResponse</a></t:tag>を使うことで
+                    バイナリデータを返すことができます。<br/>
+                    <t:eventlink event="stream" class="button is-small">stream response</t:eventlink>
+                </p>
+                <h5 class="subtitle mt-4 mb-2">URL</h5>
+                <p class="mb-4">
+                    そのURLへリダイレクトされます。<br/>
+                    <t:eventlink event="url" class="button is-small">url response</t:eventlink>
+                </p>
+                詳しくは
+                <a href="https://tapestry.apache.org/page-navigation.html#PageNavigation-ComponentEventRequests&amp;Responses">
+                    https://tapestry.apache.org/page-navigation.html#PageNavigation-ComponentEventRequests&amp;Responses
+                </a>
+                を参照してください。
+                <div class="mt-2">
+                    <t:tabs headers="['EventResponse.java','EventResponse.tml']"
+                            bodies="tabBodies"
+                            bodyMaxHeight="500px"/>
+                </div>
+            </div>
+        </article>
+
+        <t:block t:id="eventResponseJava">
+            <t:highlight text="eventResponseJavaText" lang="java"/>
+        </t:block>
+
+        <t:block t:id="eventResponseTemplate">
+            <t:highlight text="eventResponseTemplateText" lang="html"/>
+        </t:block>
+    </section>
+</t:base>

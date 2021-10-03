@@ -7,12 +7,12 @@
         <li><t:pagelink page="localization/MessageCatalog">/localization/MessageCatalog</t:pagelink></li>
         <li><t:pagelink page="component/PageAndComponent">/component/PageAndComponent</t:pagelink></li>
         <li><t:pagelink page="component/BindingExpressions">/component/BindingExpressions</t:pagelink></li>
-        <li><t:pagelink page="component/BindingExpressions">/component/BindingExpressions</t:pagelink></li>
         <li><t:pagelink page="component/PropertyExpressions">/component/PropertyExpressions</t:pagelink></li>
         <li><t:pagelink page="parameter/ParameterSample">/parameter/ParameterSample</t:pagelink></li>
         <li><t:pagelink page="parameter/BiDirectionality">/parameter/BiDirectionality</t:pagelink></li>
         <li><t:pagelink page="component/event/PageActivation">/component/event/PageActivation</t:pagelink></li>
         <li><t:pagelink page="component/event/EventHandler">/component/event/EventHandler</t:pagelink></li>
+        <li><t:pagelink page="component/event/EventResponse">/component/event/EventResponse</t:pagelink></li>
         <li><t:pagelink page="servicestatus">/servicestatus</t:pagelink></li>
         <li><t:pagelink page="exceptionreport">/exceptionreport</t:pagelink></li>
         <li><t:pagelink page="propertydisplayblocks">/propertydisplayblocks</t:pagelink></li>

@@ -161,7 +161,7 @@
             </div>
             <div class="message-body">
                 イベントハンドラの戻り値によってレスポンスをどのように行うかが決まります。<br/>
-                詳しくはを参照してください。
+                詳しくは<t:pagelink page="component/event/EventResponse">/component/event/EventResponse</t:pagelink>を参照してください。
             </div>
         </article>
     </section>

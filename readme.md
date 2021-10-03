@@ -47,9 +47,9 @@ http://localhost:8080/tapestry5-practice にアクセスする
 
 ### TODO
 - [x] page activation
-- [ ] component event
+- [x] component event
     - [x] handler
-    - [ ] response
+    - [x] response
 - [ ] components
     - [ ] control
         - [ ] if
