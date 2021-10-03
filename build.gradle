@@ -60,6 +60,7 @@ gretty {
     servletContainer = 'jetty9'
     logDir = './logs'
 //    extraResourceBase 'src/main/resources'
+    httpPort = 8080
     debugPort = 5005
     // trueにするとデバッグ接続されるまでサーバの起動が始まらない
     debugSuspend = false
