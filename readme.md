@@ -12,6 +12,13 @@ jdk8
 
 http://localhost:8080/tapestry5-practice にアクセスする
 
+ポートを変えたい場合は、`build.gradle`のgretty->httpPortを変えてください。
+
+#### デバッグ実行
+`./gradlew appRunDebug`\
+デフォルトでは5005ポートで接続することができます。\
+デバッグポートを変えたい場合は、`build.gradle`のgretty->debugPortを変えてください。
+
 ![alt](./readme/appRun.png)
 
 ##### 自動更新
