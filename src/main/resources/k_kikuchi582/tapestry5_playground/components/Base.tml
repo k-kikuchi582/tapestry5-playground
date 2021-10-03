@@ -14,7 +14,7 @@
     </t:if>
 </head>
 <body>
-<section class="hero is-success">
+<section class="hero is-success is-small" id="site-header">
     <div class="hero-head">
         <nav class="navbar is-success">
             <div class="container">
@@ -51,7 +51,7 @@
 </section>
 <div class="section columns is-variable is-8">
     <div class="column is-narrow">
-        <aside class="menu">
+        <aside class="menu" id="side-menu">
             <p class="menu-label">ページ</p>
             <t:links class="menu-list"/>
         </aside>
