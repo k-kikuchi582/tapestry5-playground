@@ -1,0 +1,72 @@
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Event Handler'">
+    <section class="section">
+        <h1 class="title">If</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>If</p>
+            </div>
+            <div class="message-body">
+                条件分岐のためのコンポーネントです。<br/>
+                詳しくは
+                <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/If.html">
+                    http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/If.html
+                </a>
+                を参照してください。
+                <p class="subtitle mt-4 mb-2">代表的なパラメータ</p>
+                <table class="table is-hoverable">
+                    <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th>型</th>
+                        <th>説明</th>
+                        <th>必須</th>
+                        <th>Default Prefix</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>test</td>
+                        <td>boolean</td>
+                        <td>trueなら中身を表示し、falseなら表示しません。</td>
+                        <td>○</td>
+                        <td>prop</td>
+                    </tr>
+                    <tr>
+                        <td>else</td>
+                        <td>Block</td>
+                        <td><t:tag>test</t:tag>パラ―メタがfalseのとき(<t:tag>negate</t:tag>パラメータがtrueなら<t:tag>test</t:tag>パラ―メタがtrueのとき)表示します。</td>
+                        <td>×</td>
+                        <td>literal</td>
+                    </tr>
+                    <tr>
+                        <td>negate</td>
+                        <td>boolean</td>
+                        <td><t:tag>test</t:tag>パラメータの値を反転します。</td>
+                        <td>×</td>
+                        <td>prop</td>
+                    </tr>
+                    </tbody>
+                </table>
+                
+                <div class="mt-2">
+                    <t:tabs headers="['IfSample','IfSample.java','IfSample.tml']"
+                            bodies="ifSampleTabBodies"
+                            bodyMaxHeight="500px"/>
+                </div>
+            </div>
+        </article>
+
+        <t:block t:id="ifSample">
+            <t:component.catalog.control.IfSample />
+        </t:block>
+
+        <t:block t:id="ifSampleJava">
+            <t:highlight text="ifSampleJavaText" lang="java"/>
+        </t:block>
+
+        <t:block t:id="ifSampleTemplate">
+            <t:highlight text="ifSampleTemplateText" lang="html"/>
+        </t:block>
+    </section>
+</t:base>
