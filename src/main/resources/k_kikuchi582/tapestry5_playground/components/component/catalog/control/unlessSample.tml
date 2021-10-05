@@ -1,0 +1,21 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <t:zone t:id="unlessSampleZone" id="unlessSampleZone" update="show">
+            <div class="notification">
+                <label for="unlessSampleFlag" class="checkbox">
+                    <t:eventcheck event="toggleFlag" checked="flag" id="unlessSampleFlag" zone="unlessSampleZone" context="!flag"/>
+                    Flag
+                </label>
+            </div>
+            <div>
+                <t:unless test="flag">
+                    Render when flag is false.
+                    <t:parameter name="else">
+                        Render when flag is true.
+                    </t:parameter>
+                </t:unless>
+            </div>
+        </t:zone>
+    </div>
+</t:container>
+
