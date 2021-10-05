@@ -9,17 +9,17 @@
             </div>
             <div>
                 <t:if test="flag">
-                    Render when flag is true.
+                    Render if block.
                     <t:parameter name="else">
-                        Render when flag is false.
+                        Render if-else block.
                     </t:parameter>
                 </t:if>
             </div>
             <div>
                 <t:if test="flag" negate="true">
-                    [negate] Render when flag is false.
+                    [negate] Render if block.
                     <t:parameter name="else">
-                        [negate] Render when flag is true.
+                        [negate] Render if-else block.
                     </t:parameter>
                 </t:if>
             </div>

@@ -9,9 +9,9 @@
             </div>
             <div>
                 <t:unless test="flag">
-                    Render when flag is false.
+                    Render unless block.
                     <t:parameter name="else">
-                        Render when flag is true.
+                        Render unless-else block.
                     </t:parameter>
                 </t:unless>
             </div>
