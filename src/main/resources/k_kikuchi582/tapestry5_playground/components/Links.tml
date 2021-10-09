@@ -15,6 +15,7 @@
         <li><t:pagelink page="component/event/EventResponse">/component/event/EventResponse</t:pagelink></li>
         <li><t:pagelink page="component/catalog/control/If">/component/catalog/control/If</t:pagelink></li>
         <li><t:pagelink page="component/catalog/control/Unless">/component/catalog/control/Unless</t:pagelink></li>
+        <li><t:pagelink page="component/catalog/control/Loop">/component/catalog/control/Loop</t:pagelink></li>
         <li><t:pagelink page="servicestatus">/servicestatus</t:pagelink></li>
         <li><t:pagelink page="exceptionreport">/exceptionreport</t:pagelink></li>
         <li><t:pagelink page="propertydisplayblocks">/propertydisplayblocks</t:pagelink></li>

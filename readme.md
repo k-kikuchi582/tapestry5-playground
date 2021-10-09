@@ -54,7 +54,8 @@ http://localhost:8080/tapestry5-practice にアクセスする
     - [ ] control
         - [x] if
         - [x] unless
-        - [ ] loop
+        - [x] loop
+        - [ ] delegate
     - [ ] form
         - [ ] textfield
         - [ ] select

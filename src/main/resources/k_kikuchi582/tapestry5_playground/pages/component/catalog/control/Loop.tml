@@ -1,0 +1,132 @@
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Event Handler'">
+    <section class="section">
+        <h1 class="title">Loop</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Loop</p>
+            </div>
+            <div class="message-body">
+                繰り返しのためのコンポーネントです。<br/>
+                詳しくは
+                <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/If.html">
+                    http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/If.html
+                </a>
+                を参照してください。
+                <p class="subtitle mt-4 mb-2">代表的なパラメータ</p>
+                <table class="table is-hoverable">
+                    <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th>型</th>
+                        <th>説明</th>
+                        <th>必須</th>
+                        <th>Default Prefix</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>source</td>
+                        <td>Iterable&lt;T&gt;</td>
+                        <td>ループしたい要素のコレクションです。</td>
+                        <td>○</td>
+                        <td>prop</td>
+                    </tr>
+                    <tr>
+                        <td>value</td>
+                        <td>T</td>
+                        <td>ループの要素です。</td>
+                        <td>×</td>
+                        <td>literal</td>
+                    </tr>
+                    <tr>
+                        <td>index</td>
+                        <td>int</td>
+                        <td>ループのインデックスです。</td>
+                        <td>×</td>
+                        <td>prop</td>
+                    </tr>
+                    <tr>
+                        <td>formState</td>
+                        <td>LoopFormState</td>
+                        <td>
+                            LoopコンポーネントがFormコンポーネント内部にある場合、submitされたときにLoop内の値にsubmitされた値をどのように反映させるかを制御するパラメータです。<br/>
+                            Formコンポーネントの内部にない場合は無視されます。
+                            <table class="table is-hoverable is-bordered">
+                                <tr>
+                                    <th>NONE</th>
+                                    <td>
+                                        値を反映しません。すなわち、Loop内のTextFieldなどのフィールドを編集してsubmitしても、サーバー側には反映されません。
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>ITERATION</th>
+                                    <td>
+                                        値を反映します。
+                                        レンダリングとsubmitの間にsourceの値が変化すると競合する可能性があります。
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>VALUES</th>
+                                    <td>
+                                        <t:tag>synchronizedValues</t:tag>イベントを通して反映します。このとき、一度stringに変換する必要があり、
+                                        <t:tag>encoder</t:tag>パラメータで設定したValueEncoderを使用します。
+                                    </td>
+                                </tr>
+                            </table>
+                            デフォルトではVALUESです。
+                        </td>
+                        <td>×</td>
+                        <td>prop</td>
+                    </tr>
+                    <tr class="has-background-grey-light">
+                        <td>volatile(非推奨)</td>
+                        <td>boolean</td>
+                        <td>
+                            trueなら<t:tag>formState</t:tag>のデフォルトがITERATIONとなり、falseならVALUESとなります。
+                            デフォルトはfalseです。
+                        </td>
+                        <td>×</td>
+                        <td>prop</td>
+                    </tr>
+                    <tr>
+                        <td>empty</td>
+                        <td>Block</td>
+                        <td>ループが空の時に表示するブロックです。デフォルトでは何も表示しません。</td>
+                        <td>×</td>
+                        <td>literal</td>
+                    </tr>
+                    <tr>
+                        <td>encoder</td>
+                        <td>ValueEncoder</td>
+                        <td>
+                            formState=VALUESの際に使うValueEncoderです。<br/>
+                            nullの場合、JavaのSerializeの仕組みを使うため、valueの型をSerializableにする必要があります。
+                        </td>
+                        <td>×</td>
+                        <td>prop</td>
+                    </tr>
+                    </tbody>
+                </table>
+                
+                <div class="mt-2">
+                    <t:tabs headers="['LoopSample','LoopSample.java','LoopSample.tml']"
+                            bodies="loopSampleTabBodies"
+                            bodyMaxHeight="500px"/>
+                </div>
+            </div>
+        </article>
+
+        <t:block t:id="loopSample">
+            <t:component.catalog.control.LoopSample />
+        </t:block>
+
+        <t:block t:id="loopSampleJava">
+            <t:highlight text="loopSampleJavaText" lang="java"/>
+        </t:block>
+
+        <t:block t:id="loopSampleTemplate">
+            <t:highlight text="loopSampleTemplateText" lang="html"/>
+        </t:block>
+    </section>
+</t:base>

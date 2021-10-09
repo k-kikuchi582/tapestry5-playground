@@ -1,0 +1,83 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <div class="mt-2">
+            <h5 class="subtitle">valueパラメータとindexパラメータの例</h5>
+            <div class="notification">
+                <table class="table is-narrow is-hoverable">
+                    <thead>
+                    <tr>
+                        <th>index</th>
+                        <th>loopValue.id</th>
+                        <th>loopValue.name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <t:loop source="loopSource" value="loopValue" index="index">
+                        <tr>
+                            <td>${index}</td>
+                            <td>${loopValue.id}</td>
+                            <td>${loopValue.name}</td>
+                        </tr>
+                    </t:loop>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="mt-2">
+            <h5 class="subtitle">emptyパラメータの例</h5>
+            <div class="notification">
+                <t:loop source="emptySource">
+                    <t:parameter name="empty">
+                        <span>空のループです。</span>
+                    </t:parameter>
+                    <div>ほげ</div>
+                </t:loop>
+            </div>
+        </div>
+        <div class="mt-2">
+            <h5 class="subtitle">formStateパラメータの例</h5>
+            <div class="notification">
+                <t:zone t:id="formStateLoopZone" id="formStateLoopZone" update="show">
+                    <t:form zone="formStateLoopZone">
+                        <div class="control">
+                            <t:radiogroup t:id="formState" value="formState">
+                                <t:label for="formState_NONE" class="radio">
+                                    <t:radio t:id="formState_NONE" value="formState_none" t:mixins="SubmitOnChange"/>
+                                    NONE
+                                </t:label>
+                                <t:label for="formState_ITERATION" class="radio">
+                                    <t:radio t:id="formState_ITERATION" value="formState_iteration" t:mixins="SubmitOnChange"/>
+                                    ITERATION
+                                </t:label>
+                                <t:label for="formState_VALUES" class="radio">
+                                    <t:radio t:id="formState_VALUES" value="formState_values" t:mixins="SubmitOnChange"/>
+                                    VALUES
+                                </t:label>
+                            </t:radiogroup>
+                        </div>
+                        <table class="table is-narrow is-fullwidth is-hoverable mt-4">
+                            <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>name</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <t:loop t:id="formStateLoop" source="formStateLoopSource" value="formStateLoopValue" formState="prop:formState" encoder="loopEntryValueEncoder">
+                                <tr>
+                                    <td>${formStateLoopValue?.id}</td>
+                                    <td><t:textfield value="formStateLoopValue?.name" class="input is-small"/></td>
+                                </tr>
+                            </t:loop>
+                            </tbody>
+                        </table>
+                        <div class="mt-2">
+                            <t:submit t:id="click" value="送信" class="button is-small"/>
+                        </div>
+                    </t:form>
+                </t:zone>
+            </div>
+        </div>
+    </div>
+</t:container>
+
