@@ -2,7 +2,7 @@
 javaのWebアプリケーションフレームワーク
 [tapestry](https://tapestry.apache.org/index.html) のサンプルプロジェクトです。
 
-諸般の事情で`5.1.0.0`に準拠しています。
+諸般の事情で`5.1.0.5`に準拠しています。
 
 ### 実行環境
 jdk8
