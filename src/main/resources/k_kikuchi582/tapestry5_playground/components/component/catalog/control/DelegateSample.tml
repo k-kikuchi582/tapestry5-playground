@@ -1,0 +1,36 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <t:zone t:id="delegateSampleZone" id="delegateSampleZone" update="show">
+            <div class="notification">
+                <t:eventradiogroup event="changeFruit" value="fruit" zone="delegateSampleZone">
+                    <div class="control">
+                        <label class="radio">
+                            <t:eventradio value="null"/>
+                            ↩ reset
+                        </label>
+                        <label class="radio">
+                            <t:eventradio value="literal:apple"/>
+                            🍎 apple
+                        </label>
+                        <label class="radio">
+                            <t:eventradio value="literal:orange"/>
+                             🍊 orange
+                        </label>
+                        <label class="radio">
+                            <t:eventradio value="literal:grape"/>
+                            🍇 grape
+                        </label>
+                    </div>
+                </t:eventradiogroup>
+            </div>
+            <div class="mt-2">
+                <t:delegate to="selectedBlock"/>
+            </div>
+            <t:block id="notSelectedBlock">選択してください</t:block>
+            <t:block id="appleBlock">りんご</t:block>
+            <t:block id="orangeBlock">みかん</t:block>
+            <t:block id="grapeBlock">ぶどう</t:block>
+        </t:zone>
+    </div>
+</t:container>
+

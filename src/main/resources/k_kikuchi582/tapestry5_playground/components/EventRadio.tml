@@ -1,0 +1,7 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <t:unless test="disabled">
+        <t:eventlink t:id="eventRadioLink" event="prop:event" class="is-hidden" zone="prop:zone" context="context">hidden</t:eventlink>
+    </t:unless>
+    <input type="radio" class="radio" id="${radioId}" name="${name}"/>
+</t:container>
+

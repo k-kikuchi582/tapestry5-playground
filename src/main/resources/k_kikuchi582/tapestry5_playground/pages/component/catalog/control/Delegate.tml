@@ -1,0 +1,59 @@
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Event Handler'">
+    <section class="section">
+        <h1 class="title">Delegate</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Delegate</p>
+            </div>
+            <div class="message-body">
+                他のブロックにレンダリングを委任するコンポーネントです。<br/>
+                典型的には、条件によってレンダリングする内容を変えたい時などに使われます。<br/>
+                詳しくは
+                <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Delegate.html">
+                    http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Delegate.html
+                </a>
+                を参照してください。
+                <p class="subtitle mt-4 mb-2">代表的なパラメータ</p>
+                <table class="table is-hoverable">
+                    <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th>型</th>
+                        <th>説明</th>
+                        <th>必須</th>
+                        <th>Default Prefix</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>to</td>
+                        <td>Object</td>
+                        <td>レンダリングしたいコンポーネントやブロック</td>
+                        <td>○</td>
+                        <td>prop</td>
+                    </tr>
+                    </tbody>
+                </table>
+                
+                <div class="mt-2">
+                    <t:tabs headers="['DelegateSample','DelegateSample.java','DelegateSample.tml']"
+                            bodies="delegateSampleTabBodies"
+                            bodyMaxHeight="500px"/>
+                </div>
+            </div>
+        </article>
+
+        <t:block t:id="delegateSample">
+            <t:component.catalog.control.DelegateSample />
+        </t:block>
+
+        <t:block t:id="delegateSampleJava">
+            <t:highlight text="delegateSampleJavaText" lang="java"/>
+        </t:block>
+
+        <t:block t:id="delegateSampleTemplate">
+            <t:highlight text="delegateSampleTemplateText" lang="html"/>
+        </t:block>
+    </section>
+</t:base>
