@@ -1,66 +1,53 @@
 <!DOCTYPE html>
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd"
-      xmlns:p="tapestry:parameter"
-      lang="${currentLocale.language}">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="icon" href="${context:favicon.ico}"/>
-    <title>${title}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
-    <link rel="stylesheet" href="${context:/css/base.css}"/>
-    <t:if test="head">
-        <t:delegate to="head"/>
-    </t:if>
-</head>
-<body>
-<section class="hero is-success is-small" id="site-header">
-    <div class="hero-head">
-        <nav class="navbar is-success">
-            <div class="container">
-                <div class="navbar-menu">
-                    <div class="navbar-end">
-                        <div class="navbar-item has-dropdown is-hoverable">
-                            <a class="navbar-link">${currentLangLabel}</a>
+<t:htmlhead head="prop:head" title="title"
+            xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd"
+            xmlns:p="tapestry:parameter">
+    <section class="hero is-success is-small" id="site-header">
+        <div class="hero-head">
+            <nav class="navbar is-success">
+                <div class="container">
+                    <div class="navbar-menu">
+                        <div class="navbar-end">
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-link">${currentLangLabel}</a>
 
-                            <div class="navbar-dropdown">
-                                <t:loop source="availableLangs" value="langView">
-                                    <t:if test="langView.current" negate="true">
-                                        <t:actionlink t:id="changeLang" context="langView.languageTag"
-                                                      class="navbar-item dropdown-item">
-                                            ${langView.label}
-                                        </t:actionlink>
-                                        <p:else>
-                                            <a class="navbar-item dropdown-item is-active">${langView.label}</a>
-                                        </p:else>
-                                    </t:if>
-                                </t:loop>
+                                <div class="navbar-dropdown">
+                                    <t:loop source="availableLangs" value="langView">
+                                        <t:if test="langView.current" negate="true">
+                                            <t:actionlink t:id="changeLang" context="langView.languageTag"
+                                                          class="navbar-item dropdown-item">
+                                                ${langView.label}
+                                            </t:actionlink>
+                                            <p:else>
+                                                <a class="navbar-item dropdown-item is-active">${langView.label}</a>
+                                            </p:else>
+                                        </t:if>
+                                    </t:loop>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </nav>
+        </div>
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">Tapestry5 practice</h1>
+                <h2 class="subtitle">${title}</h2>
             </div>
-        </nav>
-    </div>
-    <div class="hero-body">
-        <div class="container">
-            <h1 class="title">Tapestry5 practice</h1>
-            <h2 class="subtitle">${title}</h2>
+        </div>
+    </section>
+    <div class="section columns is-variable is-8">
+        <div class="column is-narrow">
+            <aside class="menu" id="side-menu">
+                <p class="menu-label">ページ</p>
+                <t:links class="menu-list"/>
+            </aside>
+        </div>
+        <div class="column">
+            <div class="container">
+                <t:body/>
+            </div>
         </div>
     </div>
-</section>
-<div class="section columns is-variable is-8">
-    <div class="column is-narrow">
-        <aside class="menu" id="side-menu">
-            <p class="menu-label">ページ</p>
-            <t:links class="menu-list"/>
-        </aside>
-    </div>
-    <div class="column">
-        <div class="container">
-            <t:body/>
-        </div>
-    </div>
-</div>
-</body>
-</html>
+</t:htmlhead>

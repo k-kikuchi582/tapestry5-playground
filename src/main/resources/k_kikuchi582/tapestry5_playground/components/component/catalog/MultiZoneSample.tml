@@ -1,0 +1,28 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <div class="mb-5">
+            <div>
+                <t:eventlink event="apple" zone="zone1">リンゴ</t:eventlink>
+            </div>
+            <div class="mt-1">
+                <t:eventlink event="orange" zone="zone2">オレンジ</t:eventlink>
+            </div>
+            <div class="mt-1">
+                <t:eventlink event="peach" zone="zone1">モモ</t:eventlink>
+            </div>
+        </div>
+
+        <div class="notification">
+            <t:zone t:id="zone1" id="zone1" update="show">
+                ${name}
+            </t:zone>
+        </div>
+
+        <div class="notification">
+            <t:zone t:id="zone2" id="zone2" update="show">
+                ${description}
+            </t:zone>
+        </div>
+    </div>
+</t:container>
+

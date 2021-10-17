@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <t:zone t:id="zoneEffectOuter" id="zoneEffectOuter" update="show">
+            <div class="columns mt-2">
+                <div class="column is-narrow">visible</div>
+                <div class="column">
+                    <t:eventradiogroup event="changeVisible" value="visible" zone="zoneEffectOuter">
+                        <div class="control">
+                            <label class="radio">
+                                <t:eventradio value="true"/><span class="ml-2">true</span>
+                            </label>
+                            <label class="radio">
+                                <t:eventradio value="false"/><span class="ml-2">false</span>
+                            </label>
+                        </div>
+                    </t:eventradiogroup>
+                </div>
+            </div>
+            <div class="columns mt-2">
+                <div class="column is-narrow">show</div>
+                <div class="column">
+                    <t:eventradiogroup event="changeShow" value="show" zone="zoneEffectOuter">
+                        <div class="control">
+                            <label class="radio">
+                                <t:eventradio value="'show'"/><span class="ml-2">show</span>
+                            </label>
+                            <label class="radio">
+                                <t:eventradio value="'slidedown'"/><span class="ml-2">slidedown</span>
+                            </label>
+                        </div>
+                    </t:eventradiogroup>
+                </div>
+            </div>
+            <div class="columns mt-2">
+                <div class="column is-narrow">update</div>
+                <div class="column">
+                    <t:eventradiogroup event="changeUpdate" value="update" zone="zoneEffectOuter">
+                        <div class="control">
+                            <label class="radio">
+                                <t:eventradio value="'highlight'"/><span class="ml-2">highlight</span>
+                            </label>
+                            <label class="radio">
+                                <t:eventradio value="'show'"/><span class="ml-2">show</span>
+                            </label>
+                            <label class="radio">
+                                <t:eventradio value="'slideup'"/><span class="ml-2">slideup</span>
+                            </label>
+                            <label class="radio">
+                                <t:eventradio value="'fade'"/><span class="ml-2">fade</span>
+                            </label>
+                        </div>
+                    </t:eventradiogroup>
+                </div>
+            </div>
+            <div class="mt-4">
+                <t:zone t:id="zoneEffectInner" id="zoneEffectInner" show="prop:show" update="prop:update" visible="visible">
+                    <div>visible='${visible}', show='${show}', update='${update}'</div>
+                </t:zone>
+            </div>
+            <div class="mt-4">
+                <t:eventlink event="update" zone="zoneEffectInner" class="button">更新</t:eventlink>
+            </div>
+        </t:zone>
+    </div>
+</t:container>
+

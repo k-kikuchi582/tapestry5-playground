@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Event Handler'">
+    <section class="section">
+        <h1 class="title">Ajax and Zone</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Zone</p>
+            </div>
+            <div class="message-body">
+                <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Zone.html">
+                    http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Zone.html
+                </a>
+                を用いることで、ページ全体ではなく一部分だけを再描画することができます。
+                <br/>
+                詳しくは
+                <a href="https://tapestry.apache.org/ajax-and-zones.html">
+                    https://tapestry.apache.org/ajax-and-zones.html
+                </a>
+                を参照してください。
+                (このプロジェクトのTapestryのバージョン(5.1.0.5)とZoneの使い方と
+                最新バージョン(=リンク先で説明されているバージョン)のZoneの使い方とで、異なる箇所があることに注意してください。)
+                <div class="mt-2">
+                    <t:sample name="ZoneSample" sourceDir="components/component/catalog">
+                        <t:component.catalog.ZoneSample />
+                    </t:sample>
+                </div>
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>注意</p>
+            </div>
+            <div class="message-body">
+                Zoneを更新するためのActionLink,EventLink,Formなどのzone属性の値と、Zoneのクライアント側の(=HTMLとしての)id属性は同じである必要があります。<br/>
+                これは、Tapestryがzone属性の値とクライアント側のid属性の値が等しいようなActionLinkなどのコンポーネントとZoneの対応関係を登録して、
+                あるzone属性を持つActionLinkなどのイベントハンドラからのレスポンスを、対応するZoneに適用する処理を行っているからです。<br/>
+                これは普段は問題になりませんが、コンポーネント,ループ,Zone等の内部にあるZoneの場合注意が必要になります。<br/>
+                TapestryはZoneのクライアント側のidとしてt:id属性の値(なければコンポーネント名、すなわち"zone")を使いますが、
+                複数回レンダする場合はクライアント側のid属性が重複しないように
+                「&lt;t:id属性の値&gt;-&lt;連番(コンポーネントやループ内部の場合)やランダムな値(Zoneの内部の場合)&gt;」の形式でクライアント側のidを決定します。<br/>
+                このようなクライアント側のid属性を予測することは困難であり、ActionLinkなどのzone属性と結びつけることは困難ですが、
+                id属性(t:idではないことに注意)を使うことで明示的にクライアント側のid属性を決定することができます。
+                <div class="mt-2">
+                    <t:sample name="ZoneInLoopSample" sourceDir="components/component/catalog">
+                        <t:component.catalog.ZoneInLoopSample />
+                    </t:sample>
+                </div>
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>複数のZoneを更新する</p>
+            </div>
+            <div class="message-body">
+                MultiZoneUpdateを用いることで、複数のZoneを更新することができます。<br/>
+                MultiZoneUpdateのコンストラクタにZoneのidと@InjectComponentで参照しているZoneインスタンスを与えて、
+                イベントハンドラの戻り値として返せばMultiZoneUpdateに登録したZoneが更新されます。<br/>
+                また、MultiZoneUpdate#add(String zoneId, Object renderer)メソッドを使うことで、更新したいZoneを複数登録することができます。
+                <div class="mt-2">
+                    <t:sample name="MultiZoneSample" sourceDir="components/component/catalog">
+                        <t:component.catalog.MultiZoneSample />
+                    </t:sample>
+                </div>
+            </div>
+        </article>
+
+
+        <article class="message">
+            <div class="message-header">
+                <p>Zoneの表示</p>
+            </div>
+            <div class="message-body">
+                Zoneの表示と非表示をvisibleパラメータで制御することができます。<br/>
+                Zoneが非表示状態から表示状態に変化する際の表示の仕方をshowパラメータで制御することができます。デフォルトは"show"です。<br/>
+                Zoneが表示されている状態で中身が更新される際の表示の仕方をupdateパラメータで制御することができます。デフォルトは"highlight"です。<br/>
+                "highlight"は更新された箇所が黄色く強調されます。非表示->表示の処理は行わないので、showパラメータに設定しても非表示のままで表示されません。<br/>
+                "show"は単に表示するだけです。<br/>
+                "slidedown"は上から下りてくるように表示されます。非表示->表示の処理をするだけなので、updateパラメータに設定しても意味がありません。
+                Zoneの中身が何かしらの要素で囲われている必要があり、Textだけなどではエラーが発生することに注意してください。<br/>
+                "slideup"は下から上にせりあがるようにして非表示となります。表示->非表示の処理をするだけなので、showパラメータに設定しても意味がありません。
+                slidedownと同じく、Zoneの中身が何かしらの要素で囲われている必要があり、Textだけなどではエラーが発生することに注意してください。<br/>
+                "fade"は更新時にフェードアウトします。表示->非表示の処理をするだけなので、showパラメータに設定しても意味がありません。<br/>
+                詳しくは
+                <a href="https://tapestry.apache.org/ajax-and-zones.html#AjaxandZones-ZoneEffectFunctions(Tapestry5.3andearlier)">
+                    https://tapestry.apache.org/ajax-and-zones.html#AjaxandZones-ZoneEffectFunctions(Tapestry5.3andearlier)
+                </a>
+                を参照してください。
+                <div class="mt-2">
+                    <t:sample name="ZoneUpdateEffectSample" sourceDir="components/component/catalog">
+                        <t:component.catalog.ZoneUpdateEffectSample />
+                    </t:sample>
+                </div>
+            </div>
+        </article>
+    </section>
+</t:base>

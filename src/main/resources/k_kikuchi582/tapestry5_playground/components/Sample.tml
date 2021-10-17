@@ -1,0 +1,18 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <t:tabs headers="tabTitles"
+            bodies="tabBodies"
+            bodyMaxHeight="500px"/>
+
+    <t:block t:id="sampleBlock">
+        <t:body/>
+    </t:block>
+
+    <t:block t:id="javaBlock">
+        <t:highlight text="javaText" lang="java"/>
+    </t:block>
+
+    <t:block t:id="templateBlock">
+        <t:highlight text="templateText" lang="html"/>
+    </t:block>
+</t:container>
+
