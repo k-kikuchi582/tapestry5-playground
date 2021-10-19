@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Event Handler'">
+    <section class="section">
+        <h1 class="title">Block</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Block</p>
+            </div>
+            <div class="message-body">
+                Blockを用いることで、テンプレートの一部を再利用したり、別のコンポーネントに渡したりできます。<br/>
+                blockは通常描画されません。別のコンポーネントに渡して使います。<br/>
+                詳しくは
+                <a href="https://tapestry.apache.org/component-templates.html#ComponentTemplates-The%3Ct:block%3EElement">
+                    https://tapestry.apache.org/component-templates.html#ComponentTemplates-The%3Ct:block%3EElement
+                </a>
+                を参照してください。
+                <div class="mt-2">
+                    <t:sample name="BlockSample" sourceDir="components/component/catalog">
+                        <t:component.catalog.BlockSample />
+                    </t:sample>
+                </div>
+            </div>
+        </article>
+    </section>
+</t:base>

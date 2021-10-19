@@ -1,0 +1,15 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <div>
+            <h5 class="subtitle is-5 mb-2">blockを別のコンポーネントに渡す('block'プレフィックスを使う例)</h5>
+            <t:delegate to="block:block"/>
+        </div>
+        <div class="mt-4">
+            <h5 class="subtitle is-5 mb-2">↑と同じblockを別のコンポーネントに渡す(java側で@Injectアノテーションを用いて参照したBlockをもらってくる例)</h5>
+            <t:delegate to="blockContent"/>
+        </div>
+    </div>
+    <t:block id="block">
+        <span>ブロックの中身</span>
+    </t:block>
+</t:container>
