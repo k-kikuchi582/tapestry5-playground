@@ -19,6 +19,7 @@
         <li><t:pagelink page="component/catalog/control/Delegate">/component/catalog/control/Delegate</t:pagelink></li>
         <li><t:pagelink page="component/AjaxAndZone">/component/AjaxAndZone</t:pagelink></li>
         <li><t:pagelink page="component/catalog/Block">/component/catalog/Block</t:pagelink></li>
+        <li><t:pagelink page="component/catalog/form/TextField">/component/catalog/form/TextField</t:pagelink></li>
         <li><t:pagelink page="servicestatus">/servicestatus</t:pagelink></li>
         <li><t:pagelink page="exceptionreport">/exceptionreport</t:pagelink></li>
         <li><t:pagelink page="propertydisplayblocks">/propertydisplayblocks</t:pagelink></li>

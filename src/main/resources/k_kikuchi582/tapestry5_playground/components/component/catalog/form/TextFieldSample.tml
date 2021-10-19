@@ -1,0 +1,53 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <div>
+            <h5 class="subtitle is-6 mb-2">valueパラメータを明示的に渡す例</h5>
+            <t:zone t:id="explicitValueZone" id="explicitValueZone">
+                <t:form t:id="explicitValueForm" zone="explicitValueZone">
+                    <div class="columns mt-2">
+                        <div class="column is-9">
+                            <t:textfield t:id="explicit" value="explicit" class="input is-small"/>
+                        </div>
+                        <div class="column">
+                            <t:submit t:id="explicitValueSubmit" value="'更新'" class="button is-small"/>
+                        </div>
+                    </div>
+                    <div class="notification">${explicit}</div>
+                </t:form>
+            </t:zone>
+        </div>
+        <div class="mt-8">
+            <h5 class="subtitle is-6 mb-2">idに対応するjava側のフィールドを参照する例</h5>
+            <t:zone t:id="implicitValueZone" id="implicitValueZone">
+                <t:form t:id="implicitValueForm" zone="implicitValueZone">
+                    <div class="columns mt-2">
+                        <div class="column is-9">
+                            <t:textfield t:id="implicit" class="input is-small"/>
+                        </div>
+                        <div class="column">
+                            <t:submit t:id="implicitValueSubmit" value="'更新'" class="button is-small"/>
+                        </div>
+                    </div>
+                    <div class="notification">${implicit}</div>
+                </t:form>
+            </t:zone>
+        </div>
+        <div class="mt-8">
+            <h5 class="subtitle is-6 mb-2">clientIdの例(F12で要素のidを調べてみてください。)</h5>
+            <t:zone t:id="clientIdZone" id="clientIdZone">
+                <t:form t:id="clientIdForm" zone="clientIdZone">
+                    <div class="columns mt-2">
+                        <div class="column is-9">
+                            <t:textfield t:id="clientId" value="clientId" clientId="prop:clientId" class="input is-small"/>
+                        </div>
+                        <div class="column">
+                            <t:submit t:id="clientIdSubmit" value="'更新'" class="button is-small"/>
+                        </div>
+                    </div>
+                    <div class="notification">${clientId}</div>
+                </t:form>
+            </t:zone>
+        </div>
+    </div>
+</t:container>
+
