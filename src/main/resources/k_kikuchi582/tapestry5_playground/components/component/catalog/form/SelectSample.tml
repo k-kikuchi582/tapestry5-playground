@@ -1,0 +1,112 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <div>
+            <h5 class="subtitle is-6 mb-2">modelパラメータの例</h5>
+            <t:zone t:id="modelZone" id="modelZone">
+                <t:form t:id="modelForm" zone="modelZone">
+                    <div class="columns mt-2">
+                        <div class="column">
+                            <div class="select is-small">
+                                <t:select t:id="modelSelect" model="model" value="modelValue"/>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <t:submit t:id="modelSubmit" value="更新" class="button is-small"/>
+                        </div>
+                    </div>
+                    <div class="notification">${modelValue}</div>
+                </t:form>
+            </t:zone>
+        </div>
+        <div class="mt-8">
+            <h5 class="subtitle is-6 mb-2">valueEncoderパラメータの例</h5>
+            <t:zone t:id="valueEncoderZone" id="valueEncoderZone">
+                <t:form t:id="valueEncoderForm" zone="valueEncoderZone">
+                    <div class="columns mt-2">
+                        <div class="column">
+                            <div class="select is-small">
+                                <t:select t:id="valueEncoder" model="valueEncoderModel" value="valueEncoderValue" encoder="valueEncoder"/>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <t:submit t:id="valueEncoderSubmit" value="更新" class="button is-small"/>
+                        </div>
+                    </div>
+                    <div class="notification">${valueEncoderValue?.label}</div>
+                </t:form>
+            </t:zone>
+        </div>
+        <div class="mt-8">
+            <h5 class="subtitle is-6 mb-2">blankOptionの例</h5>
+            <t:zone t:id="blankOptionZone" id="blankOptionZone">
+                <t:form t:id="blankOptionForm" zone="blankOptionZone">
+                    <div class="columns mt-2">
+                        <div class="column is-3">blankOption</div>
+                        <div class="column">
+                            <t:eventradiogroup event="changeBlankOption" value="blankOption" zone="blankOptionZone">
+                                <div class="control">
+                                    <label class="radio">
+                                        <t:eventradio value="'auto'"/>
+                                        auto
+                                    </label>
+                                    <label class="radio">
+                                        <t:eventradio value="'always'"/>
+                                        always
+                                    </label>
+                                    <label class="radio">
+                                        <t:eventradio value="'never'"/>
+                                        never
+                                    </label>
+                                </div>
+                            </t:eventradiogroup>
+                        </div>
+                    </div>
+                    <div class="columns mt-2">
+                        <div class="column is-3">必須ではないフィールド</div>
+                        <div class="column">
+                            <div class="select is-small">
+                                <t:select t:id="blankOptionNullable" value="blankOptionNullableValue" model="blankOptionModel" blankOption="prop:blankOption"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns mt-2">
+                        <div class="column is-3">必須なフィールド</div>
+                        <div class="column">
+                            <div class="select is-small">
+                                <t:select t:id="blankOptionNotNull" value="blankOptionNonNullValue" model="blankOptionModel" blankOption="prop:blankOption"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns mt-2">
+                        <div class="column">
+                            <t:submit t:id="blankOptionSubmit" value="更新" class="button is-small"/>
+                        </div>
+                    </div>
+                    <div class="notification">${blankOptionNullableValue},${blankOptionNonNullValue}</div>
+                </t:form>
+            </t:zone>
+        </div>
+        <div class="mt-8">
+            <h5 class="subtitle is-6 mb-2">blankLabelパラメータの例</h5>
+            <t:form t:id="blankLabelForm">
+                <div class="columns mt-2">
+                    <div class="column">blankLabelを明示的に指定している場合</div>
+                    <div class="column">
+                        <div class="select is-small">
+                            <t:select t:id="explicitBlankLabel" value="blankLabelValue" model="blankLabelModel" blankOption="always" blankLabel="未選択"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns mt-2">
+                    <div class="column">blankLabelを明示的に指定していない場合</div>
+                    <div class="column">
+                        <div class="select is-small">
+                            <t:select t:id="implicitBlankLabel" value="blankLabelValue" model="blankLabelModel" blankOption="always"/>
+                        </div>
+                    </div>
+                </div>
+            </t:form>
+        </div>
+    </div>
+</t:container>
+

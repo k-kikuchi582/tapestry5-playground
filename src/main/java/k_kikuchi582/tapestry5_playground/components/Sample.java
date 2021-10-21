@@ -1,5 +1,6 @@
 package k_kikuchi582.tapestry5_playground.components;
 
+import k_kikuchi582.tapestry5_playground.internal.AdditionalSampleItem;
 import k_kikuchi582.tapestry5_playground.services.AppModule;
 import k_kikuchi582.tapestry5_playground.util.Utils;
 import org.apache.tapestry5.Asset;
@@ -12,7 +13,7 @@ import org.apache.tapestry5.services.AssetSource;
 
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sample {
@@ -21,6 +22,9 @@ public class Sample {
 
     @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     private String sourceDir;
+
+    @Parameter
+    private List<AdditionalSampleItem> additionalItems;
 
     @Inject
     private AssetSource assetSource;
@@ -38,11 +42,25 @@ public class Sample {
     private Block templateBlock;
 
     public List<String> getTabTitles() {
-        return Arrays.asList(name, name + ".java", name + ".tml");
+        List<String> titles = new ArrayList<>();
+        titles.add(name);
+        titles.add(name + ".java");
+        titles.add(name + ".tml");
+        if (additionalItems != null) {
+            additionalItems.forEach(addition -> titles.add(addition.getTitle()));
+        }
+        return titles;
     }
 
     public List<Block> getTabBodies() {
-        return Arrays.asList(sampleBlock, javaBlock, templateBlock);
+        List<Block> blocks = new ArrayList<>();
+        blocks.add(sampleBlock);
+        blocks.add(javaBlock);
+        blocks.add(templateBlock);
+        if (additionalItems != null) {
+            additionalItems.forEach(addition -> blocks.add(addition.getBlock()));
+        }
+        return blocks;
     }
 
     private String resolveForClassPath(String dir, String name) {

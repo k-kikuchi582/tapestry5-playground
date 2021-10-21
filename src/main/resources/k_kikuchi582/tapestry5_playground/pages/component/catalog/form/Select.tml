@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Event Handler'">
+    <section class="section">
+        <h1 class="title">TextField</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>TextField</p>
+            </div>
+            <div class="message-body">
+                HTMLのselect要素に対応するコンポーネントです。<br/>
+                詳しくは
+                <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Select.html">
+                    http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Select.html
+                </a>
+                を参照してください。
+                <p class="subtitle mt-4 mb-2">代表的なパラメータ</p>
+                <table class="table is-hoverable">
+                    <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th>型</th>
+                        <th>説明</th>
+                        <th>必須</th>
+                        <th>Default Prefix</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>value</td>
+                        <td>object</td>
+                        <td>
+                            このSelectを通して更新される値です。<br/>
+                            何も指定されていない場合、このSelectのコンポーネントとしてのidと同じ名前のフィールドが対応付けられます。
+                        </td>
+                        <td>△</td>
+                        <td>prop</td>
+                    </tr>
+                    <tr>
+                        <td>model</td>
+                        <td>SelectModel</td>
+                        <td>
+                            selectのoptionの定義です。
+                        </td>
+                        <td>○</td>
+                        <td>prop</td>
+                    </tr>
+                    <tr>
+                        <td>encoder</td>
+                        <td>ValueEncoder</td>
+                        <td>
+                            modelパラメータで設定した値と、HTMLのoption要素のvalue属性の値を対応させるために使用します。<br/>
+                            Stringやint等、Type CoercionにStringとの相互変換が登録されている型
+                            (<a href="https://tapestry.apache.org/type-coercion.html#TypeCoercion-ListofCoercions">
+                                https://tapestry.apache.org/type-coercion.html#TypeCoercion-ListofCoercions
+                            </a>を参照)または列挙型であれば指定する必要はありませんが、独自定義の型等、Type Coercionに登録されていない型を使用する際は必要となります。
+                        </td>
+                        <td>×</td>
+                        <td>prop</td>
+                    </tr>
+                    <tr>
+                        <td>blankOption</td>
+                        <td>BlankOption</td>
+                        <td>
+                            空のoptionを付け加えるかを制御するパラメータです。<br/>
+                            空のoptionは常に先頭に置かれ、valueは空文字となります。<br/>
+                            'always'ならば、常に空のoptionを付与し、'never'なら空のoptionを付与しません。<br/>
+                            デフォルトは'auto'で、selectにvalueパラメータを通じてバインドされたフィールドが必須なら空のoptionを加え、必須でなければ空のoptionを加えません。<br/>
+                            validationの仕組みについては本プロジェクトでは解説しません。
+                            <a href="https://tapestry.apache.org/bean-validation.html">https://tapestry.apache.org/bean-validation.html</a>を参照してください。
+                        </td>
+                        <td>×</td>
+                        <td>literal</td>
+                    </tr>
+                    <tr>
+                        <td>blankLabel</td>
+                        <td>String</td>
+                        <td>
+                            selectの空optionに使用するラベルです。<br/>
+                            指定しない場合、&lt;id&gt;-blankLabelが使用されます。
+                        </td>
+                        <td>×</td>
+                        <td>literal</td>
+                    </tr>
+                    <tr>
+                        <td>clientId</td>
+                        <td>String</td>
+                        <td>
+                            HTML側のid属性を明示的に設定したいときに使います。<br/>
+                            デフォルトではこのSelectのコンポーネントとしてのidに基づいて決まります。
+                        </td>
+                        <td>×</td>
+                        <td>literal</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="mt-2">
+                    <t:sample name="SelectSample" sourceDir="components/component/catalog/form" additionalItems="additionalItems">
+                        <t:component.catalog.form.SelectSample />
+                    </t:sample>
+                </div>
+                <div class="mt-2">
+                    ※valueパラメータとclientIdパラメータについての例は
+                    <t:pagelink page="component/catalog/form/TextField">TextFieldについてのページ</t:pagelink>
+                    を参照してください。
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <t:block t:id="selectSamplePropertiesBlock">
+        <t:highlight text="selectSamplePropertiesText" lang="properties"/>
+    </t:block>
+</t:base>
