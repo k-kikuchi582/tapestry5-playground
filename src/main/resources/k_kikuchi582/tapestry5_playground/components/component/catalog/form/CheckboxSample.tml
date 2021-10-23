@@ -1,0 +1,59 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <div>
+            <h5 class="subtitle is-6 mb-2">普通のチェックボックスの例</h5>
+            <t:zone t:id="fruitZone" id="fruitZone">
+                <t:form t:id="fruitForm" zone="fruitZone">
+                    <div class="columns mt-2">
+                        <div class="column is-9">
+                            <div class="control">
+                                <t:label class="checkbox" for="apple">
+                                    <t:checkbox t:id="apple" value="isCheckedApple" class="checkbox"/>
+                                    🍎りんご
+                                </t:label>
+                                <t:label class="checkbox" for="orange">
+                                    <t:checkbox t:id="orange" value="isCheckedOrange" class="checkbox"/>
+                                    🍊みかん
+                                </t:label>
+                                <t:label class="checkbox" for="grape">
+                                    <t:checkbox t:id="grape" value="isCheckedGrape" class="checkbox"/>
+                                    🍇ぶどう
+                                </t:label>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <t:submit t:id="fruitSubmit" value="更新" class="button is-small"/>
+                        </div>
+                    </div>
+                    <div class="notification">🍎りんご='${isCheckedApple}', 🍊みかん='${isCheckedOrange}', 🍇ぶどう='${isCheckedGrape}'</div>
+                </t:form>
+            </t:zone>
+        </div>
+        <div class="mt-8">
+            <h5 class="subtitle is-6 mb-2">ループと組み合わせた例</h5>
+            <t:zone t:id="vegetableZone" id="vegetableZone">
+                <t:form t:id="vegetableForm" zone="vegetableZone">
+                    <div class="columns mt-2">
+                        <div class="column is-9">
+                            <div class="control">
+                                <t:loop t:id="vegetableCheckLoop" source="checkModels" value="checkModel" formState="VALUES" encoder="vegetableEncoder">
+                                    <t:label for="check">
+                                        <t:checkbox t:id="check" value="checkModel.checked" class="checkbox"/>
+                                        ${checkModel.label}
+                                    </t:label>
+                                </t:loop>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <t:submit t:id="vegetableSubmit" value="更新" class="button is-small"/>
+                        </div>
+                    </div>
+                    <div class="notification">
+                        <t:loop source="checkModels" value="checkModel" formState="NONE">${checkModel}</t:loop>
+                    </div>
+                </t:form>
+            </t:zone>
+        </div>
+    </div>
+</t:container>
+

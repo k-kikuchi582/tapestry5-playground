@@ -59,7 +59,7 @@ http://localhost:8080/tapestry5-practice にアクセスする
     - [ ] form
         - [x] textfield
         - [x] select
-        - [ ] check
+        - [x] check
         - [ ] radio
         - [ ] textarea
     - [x] block
