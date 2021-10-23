@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Event Handler'">
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Select'">
     <section class="section">
-        <h1 class="title">TextField</h1>
+        <h1 class="title">Select</h1>
 
         <article class="message">
             <div class="message-header">
-                <p>TextField</p>
+                <p>Select</p>
             </div>
             <div class="message-body">
                 HTMLのselect要素に対応するコンポーネントです。<br/>

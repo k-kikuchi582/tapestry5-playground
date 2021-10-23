@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Event Handler'">
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Ajax and Zone'">
     <section class="section">
         <h1 class="title">Ajax and Zone</h1>
 
