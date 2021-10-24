@@ -22,6 +22,7 @@
         <li><t:pagelink page="component/catalog/form/TextField">/component/catalog/form/TextField</t:pagelink></li>
         <li><t:pagelink page="component/catalog/form/Select">/component/catalog/form/Select</t:pagelink></li>
         <li><t:pagelink page="component/catalog/form/Checkbox">/component/catalog/form/Checkbox</t:pagelink></li>
+        <li><t:pagelink page="component/catalog/form/Radio">/component/catalog/form/Radio</t:pagelink></li>
         <li><t:pagelink page="servicestatus">/servicestatus</t:pagelink></li>
         <li><t:pagelink page="exceptionreport">/exceptionreport</t:pagelink></li>
         <li><t:pagelink page="propertydisplayblocks">/propertydisplayblocks</t:pagelink></li>

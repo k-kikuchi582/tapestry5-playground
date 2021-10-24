@@ -1,0 +1,98 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <div>
+            <h5 class="subtitle is-6 mb-2">普通のチェックボックスの例</h5>
+            <t:zone t:id="fruitZone" id="fruitZone">
+                <t:form t:id="fruitForm" zone="fruitZone">
+                    <div class="columns mt-2">
+                        <div class="column is-9">
+                            <t:radiogroup t:id="fruit" value="fruit">
+                                <div class="control">
+                                    <t:label for="apple" class="radio">
+                                        <t:radio t:id="apple" value="'apple'"/>
+                                        🍎リンゴ
+                                    </t:label>
+                                    <t:label for="orange" class="radio">
+                                        <t:radio t:id="orange" value="'orange'"/>
+                                        🍊オレンジ
+                                    </t:label>
+                                    <t:label for="grape" class="radio">
+                                        <t:radio t:id="grape" value="'grape'"/>
+                                        🍇ぶどう
+                                    </t:label>
+                                </div>
+                            </t:radiogroup>
+                        </div>
+                        <div class="column">
+                            <t:submit t:id="fruitSubmit" value="更新" class="button is-small"/>
+                        </div>
+                    </div>
+                    <div class="notification">${fruit}</div>
+                </t:form>
+            </t:zone>
+        </div>
+        <div class="mt-4">
+            <h5 class="subtitle is-6 mb-2">disabledパラメータの例</h5>
+            <t:zone t:id="disabledZone" id="disabledZone">
+                <t:form t:id="disabledForm" zone="disabledZone">
+                    <div class="columns mt-2">
+                        <div class="column">
+                            <label for="disabledFlag" class="checkbox">
+                                <t:eventcheck event="toggleDisabled" checked="disabled" id="disabledFlag" zone="disabledZone" context="!disabled"/>
+                                disabled
+                            </label>
+                        </div>
+                    </div>
+                    <div class="columns mt-2">
+                        <div class="column is-9">
+                            <t:radiogroup value="fruitForDisabled" disabled="disabled">
+                                <div class="control">
+                                    <t:label for="appleForDisabled" class="radio">
+                                        <t:radio t:id="appleForDisabled" value="'apple'"/>
+                                        🍎リンゴ
+                                    </t:label>
+                                    <t:label for="orangeForDisabled" class="radio">
+                                        <t:radio t:id="orangeForDisabled" value="'orange'"/>
+                                        🍊オレンジ
+                                    </t:label>
+                                    <t:label for="grapeForDisabled" class="radio">
+                                        <t:radio t:id="grapeForDisabled" value="'grape'" disabled="true"/>
+                                        🍇ぶどう
+                                    </t:label>
+                                </div>
+                            </t:radiogroup>
+                        </div>
+                        <div class="column">
+                            <t:submit t:id="disabledSubmit" value="更新" class="button is-small"/>
+                        </div>
+                    </div>
+                    <div class="notification">${fruitForDisabled}</div>
+                </t:form>
+            </t:zone>
+        </div>
+        <div class="mt-4">
+            <h5 class="subtitle is-6 mb-2">labelパラメータの例</h5>
+            <t:form t:id="labelForm">
+                <div class="columns mt-2">
+                    <div class="column">
+                        <t:label for="labelSample"/>
+                        <t:radiogroup t:id="labelSample" value="fruit" label="labelパラメータを使うと、対応するLabelコンポーネントにlabelパラメータに渡した文字列が表示されます。">
+                            <div class="control">
+                                <t:radio t:id="label1" value="'apple'"/>
+                                <t:label for="label1" class="radio"/>
+                                <t:radio t:id="label2" value="'orange'"/>
+                                <t:label for="label2" class="radio"/>
+                                <t:radio t:id="label3" value="'grape'" label="labelパラメータを使っても、対応するLabelコンポーネントが存在しなかったり、対応するLabelコンポーネントにbodyが存在するときは無視されます。"/>
+                                <t:label for="label3" class="radio"/>
+                                <t:radio t:id="label4" value="'orange'" label="対応するLabelコンポーネントがないため無視される"/>
+                                <t:radio t:id="label5" value="'apple'" label="対応するLabelコンポーネントがbodyを持つため無視される"/>
+                                <t:label for="label5" class="radio">こっちが優先される</t:label>
+                            </div>
+                        </t:radiogroup>
+                    </div>
+                </div>
+            </t:form>
+        </div>
+    </div>
+</t:container>
+

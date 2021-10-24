@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Radio'">
+    <section class="section">
+        <h1 class="title">Radio</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Radio</p>
+            </div>
+            <div class="message-body">
+                HTMLのラジオボタンに対応するコンポーネントです。<br/>
+                RadioGroupとRadioを組み合わせて使います。<br/>
+                詳しくは
+                <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/RadioGroup.html">
+                    http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/RadioGroup.html
+                </a>
+                と
+                <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Radio.html">
+                    http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Radio.html
+                </a>
+                を参照してください。
+                <p class="subtitle mt-4 mb-2">RadioGroup代表的なパラメータ</p>
+                <table class="table is-hoverable">
+                    <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th>型</th>
+                        <th>説明</th>
+                        <th>必須</th>
+                        <th>Default Prefix</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>value</td>
+                        <td>object</td>
+                        <td>
+                            このRadioGroupを通して更新される値です。<br/>
+                            何も指定されていない場合、このRadioGroupのコンポーネントとしてのidと同じ名前のフィールドが対応付けられます。
+                        </td>
+                        <td>△</td>
+                        <td>prop</td>
+                    </tr>
+                    <tr>
+                        <td>encoder</td>
+                        <td>ValueEncoder</td>
+                        <td>
+                            配下のRadioコンポーネントのvalueパラメータに与えた値と、HTMLのinput要素のvalue属性の値を対応させるために使用します。<br/>
+                            Stringやint等、Type CoercionにStringとの相互変換が登録されている型
+                            (<a href="https://tapestry.apache.org/type-coercion.html#TypeCoercion-ListofCoercions">
+                            https://tapestry.apache.org/type-coercion.html#TypeCoercion-ListofCoercions
+                        </a>を参照)または列挙型であれば指定する必要はありませんが、独自定義の型等、Type Coercionに登録されていない型を使用する際は必要となります。
+                        </td>
+                        <td>×</td>
+                        <td>prop</td>
+                    </tr>
+                    <tr>
+                        <td>disabled</td>
+                        <td>boolean</td>
+                        <td>
+                            trueなら配下のRadioに対応するinput要素すべてにdisabled属性が付与されます。<br/>
+                            デフォルトはfalseです。
+                        </td>
+                        <td>○</td>
+                        <td>prop</td>
+                    </tr>
+                    <tr>
+                        <td>label</td>
+                        <td>String</td>
+                        <td>
+                            フィールドのラベルです。存在しなければ「&lt;id&gt;-label」というキーのメッセージを探します。それもなければ、idをもとに作成します。(例. ID「userId」->ラベル「User Id」)
+                        </td>
+                        <td>×</td>
+                        <td>literal</td>
+                    </tr>
+                    <tr>
+                        <td>clientId</td>
+                        <td>String</td>
+                        <td>
+                            HTML側のid属性を明示的に設定したいときに使います。<br/>
+                            デフォルトではこのRadioGroupのコンポーネントとしてのidに基づいて決まります。
+                        </td>
+                        <td>×</td>
+                        <td>literal</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p class="subtitle mt-4 mb-2">Radio代表的なパラメータ</p>
+                <table class="table is-hoverable">
+                    <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th>型</th>
+                        <th>説明</th>
+                        <th>必須</th>
+                        <th>Default Prefix</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>value</td>
+                        <td>object</td>
+                        <td>
+                            このRadioが選択されているときにサーバーに送信される値です。<br/>
+                            何も指定されていない場合、このRadioのコンポーネントとしてのidと同じ名前のフィールドが対応付けられます。
+                        </td>
+                        <td>○</td>
+                        <td>prop</td>
+                    </tr>
+                    <tr>
+                        <td>label</td>
+                        <td>String</td>
+                        <td>
+                            フィールドのラベルです。存在しなければ「&lt;id&gt;-label」というキーのメッセージを探します。それもなければ、idをもとに作成します。(例. ID「userId」->ラベル「User Id」)
+                        </td>
+                        <td>×</td>
+                        <td>literal</td>
+                    </tr>
+                    <tr>
+                        <td>disabled</td>
+                        <td>boolean</td>
+                        <td>
+                            trueならこのRadioに対応するHTMLのinput要素にdisabled属性が付与されます。<br/>
+                            デフォルトはfalseです。
+                        </td>
+                        <td>×</td>
+                        <td>prop</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="mt-2">
+                    <t:sample name="RadioSample" sourceDir="components/component/catalog/form" additionalItems="additionalItems">
+                        <t:component.catalog.form.RadioSample />
+                    </t:sample>
+                </div>
+                <div class="mt-2">
+                    ※valueパラメータとclientIdパラメータについての例は
+                    <t:pagelink page="component/catalog/form/TextField">TextFieldについてのページ</t:pagelink>
+                    を参照してください。<br/>
+                    また、encoderパラメータについての例は
+                    <t:pagelink page="component/catalog/form/Select">Selectについてのページ</t:pagelink>
+                    を参照してください。
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <t:block t:id="radioSamplePropertiesBlock">
+        <t:highlight text="radioSamplePropertiesText" lang="properties"/>
+    </t:block>
+</t:base>
