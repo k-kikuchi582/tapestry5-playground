@@ -95,7 +95,7 @@
                     </tbody>
                 </table>
                 <div class="mt-2">
-                    <t:sample name="SelectSample" sourceDir="components/component/catalog/form" additionalItems="additionalItems">
+                    <t:sample name="SelectSample" sourceDir="components/component/catalog/form">
                         <t:component.catalog.form.SelectSample />
                     </t:sample>
                 </div>
@@ -107,8 +107,4 @@
             </div>
         </article>
     </section>
-
-    <t:block t:id="selectSamplePropertiesBlock">
-        <t:highlight text="selectSamplePropertiesText" lang="properties"/>
-    </t:block>
 </t:base>

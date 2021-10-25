@@ -129,7 +129,7 @@
                     </tbody>
                 </table>
                 <div class="mt-2">
-                    <t:sample name="RadioSample" sourceDir="components/component/catalog/form" additionalItems="additionalItems">
+                    <t:sample name="RadioSample" sourceDir="components/component/catalog/form">
                         <t:component.catalog.form.RadioSample />
                     </t:sample>
                 </div>
@@ -144,8 +144,4 @@
             </div>
         </article>
     </section>
-
-    <t:block t:id="radioSamplePropertiesBlock">
-        <t:highlight text="radioSamplePropertiesText" lang="properties"/>
-    </t:block>
 </t:base>
