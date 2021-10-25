@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'TextArea'">
+    <section class="section">
+        <h1 class="title">TextArea</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>TextArea</p>
+            </div>
+            <div class="message-body">
+                HTMLのtextarea要素に対応するコンポーネントです。<br/>
+                詳しくは
+                <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/TextArea.html">
+                    http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/TextArea.html
+                </a>
+                を参照してください。
+                <p class="subtitle mt-4 mb-2">代表的なパラメータ</p>
+                <table class="table is-hoverable">
+                    <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th>型</th>
+                        <th>説明</th>
+                        <th>必須</th>
+                        <th>Default Prefix</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>value</td>
+                        <td>object</td>
+                        <td>
+                            このTextFieldを通して更新される値です。<br/>
+                            何も指定されていない場合、このTextFieldのコンポーネントとしてのidと同じ名前のフィールドが対応付けられます。
+                        </td>
+                        <td>△</td>
+                        <td>prop</td>
+                    </tr>
+                    <tr>
+                        <td>clientId</td>
+                        <td>String</td>
+                        <td>
+                            HTML側のid属性を明示的に設定したいときに使います。<br/>
+                            デフォルトではこのTextFieldのコンポーネントとしてのidに基づいて決まります。
+                        </td>
+                        <td>×</td>
+                        <td>literal</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="mt-2">
+                    <t:sample name="TextAreaSample" sourceDir="components/component/catalog/form">
+                        <t:component.catalog.form.TextAreaSample />
+                    </t:sample>
+                </div>
+                <div class="mt-2">
+                    ※valueパラメータとclientIdパラメータについての例は
+                    <t:pagelink page="component/catalog/form/TextField">TextFieldについてのページ</t:pagelink>
+                    を参照してください。
+                </div>
+            </div>
+        </article>
+    </section>
+</t:base>

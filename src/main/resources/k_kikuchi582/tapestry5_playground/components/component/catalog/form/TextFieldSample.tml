@@ -9,7 +9,7 @@
                             <t:textfield t:id="explicit" value="explicit" class="input is-small"/>
                         </div>
                         <div class="column">
-                            <t:submit t:id="explicitValueSubmit" value="'更新'" class="button is-small"/>
+                            <t:submit t:id="explicitValueSubmit" value="更新" class="button is-small"/>
                         </div>
                     </div>
                     <div class="notification">${explicit}</div>
@@ -25,7 +25,7 @@
                             <t:textfield t:id="implicit" class="input is-small"/>
                         </div>
                         <div class="column">
-                            <t:submit t:id="implicitValueSubmit" value="'更新'" class="button is-small"/>
+                            <t:submit t:id="implicitValueSubmit" value="更新" class="button is-small"/>
                         </div>
                     </div>
                     <div class="notification">${implicit}</div>
@@ -41,7 +41,7 @@
                             <t:textfield t:id="clientId" value="clientId" clientId="prop:clientId" class="input is-small"/>
                         </div>
                         <div class="column">
-                            <t:submit t:id="clientIdSubmit" value="'更新'" class="button is-small"/>
+                            <t:submit t:id="clientIdSubmit" value="更新" class="button is-small"/>
                         </div>
                     </div>
                     <div class="notification">${clientId}</div>

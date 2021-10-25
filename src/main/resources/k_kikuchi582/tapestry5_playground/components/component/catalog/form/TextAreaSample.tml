@@ -1,0 +1,21 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <div>
+            <h5 class="subtitle is-6 mb-2">TextAreaの例</h5>
+            <t:zone t:id="zone" id="zone">
+                <t:form t:id="form" zone="zone">
+                    <div class="columns mt-2">
+                        <div class="column is-9">
+                            <t:textarea t:id="textarea" value="value" class="textarea is-small"/>
+                        </div>
+                        <div class="column">
+                            <t:submit t:id="submit" value="更新" class="button is-small"/>
+                        </div>
+                    </div>
+                    <div class="notification"><t:outputraw value="escapedValue"/></div>
+                </t:form>
+            </t:zone>
+        </div>
+    </div>
+</t:container>
+
