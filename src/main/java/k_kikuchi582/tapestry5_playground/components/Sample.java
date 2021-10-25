@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Sample {
     @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
@@ -41,11 +42,34 @@ public class Sample {
     @Id("templateBlock")
     private Block templateBlock;
 
+    @Inject
+    @Id("jsBlock")
+    private Block jsBlock;
+
+    @Inject
+    @Id("cssBlock")
+    private Block cssBlock;
+
+    @Inject
+    @Id("propertiesBlock")
+    private Block propertiesBlock;
+
     public List<String> getTabTitles() {
         List<String> titles = new ArrayList<>();
         titles.add(name);
         titles.add(name + ".java");
-        titles.add(name + ".tml");
+        if (isHasTemplate()) {
+            titles.add(name + ".tml");
+        }
+        if (isHasJs()) {
+            titles.add(name + ".js");
+        }
+        if (isHasCss()) {
+            titles.add(name + ".css");
+        }
+        if (isHasProperties()) {
+            titles.add(name + ".properties");
+        }
         if (additionalItems != null) {
             additionalItems.forEach(addition -> titles.add(addition.getTitle()));
         }
@@ -56,7 +80,18 @@ public class Sample {
         List<Block> blocks = new ArrayList<>();
         blocks.add(sampleBlock);
         blocks.add(javaBlock);
-        blocks.add(templateBlock);
+        if (isHasTemplate()) {
+            blocks.add(templateBlock);
+        }
+        if (isHasJs()) {
+            blocks.add(jsBlock);
+        }
+        if (isHasCss()) {
+            blocks.add(cssBlock);
+        }
+        if (isHasProperties()) {
+            blocks.add(propertiesBlock);
+        }
         if (additionalItems != null) {
             additionalItems.forEach(addition -> blocks.add(addition.getBlock()));
         }
@@ -73,12 +108,56 @@ public class Sample {
     }
 
     public String getJavaText() throws IOException {
-        Asset asset = assetSource.getClasspathAsset(resolveForClassPath(sourceDir, name + ".java"));
-        return Utils.getText(asset);
+        return getText(name + ".java");
     }
 
     public String getTemplateText() throws IOException {
-        Asset asset = assetSource.getClasspathAsset(resolveForClassPath(sourceDir, name + ".tml"));
+        return getText(name + ".tml");
+    }
+
+    public boolean isHasTemplate() {
+        return hasAsset(name + ".tml");
+    }
+
+    public String getJsText() throws IOException {
+        return getText(name + ".js");
+    }
+
+    public boolean isHasJs() {
+        return hasAsset(name + ".js");
+    }
+
+    public String getCssText() throws IOException {
+        return getText(name + ".css");
+    }
+
+    public boolean isHasCss() {
+        return hasAsset(name + ".css");
+    }
+
+    public String getPropertiesText() throws IOException {
+        return getText(name + ".properties");
+    }
+
+    public boolean isHasProperties() {
+        return hasAsset(name + ".properties");
+    }
+
+    private Asset getAsset( String name ) {
+        return assetSource.getClasspathAsset(resolveForClassPath(sourceDir, name) );
+    }
+
+    private String getText( String name ) throws IOException {
+        Asset asset = getAsset(name);
         return Utils.getText(asset);
+    }
+
+    private boolean hasAsset( String name ) {
+        try {
+            getAsset( name );
+            return true;
+        } catch ( RuntimeException e ) {
+            return false;
+        }
     }
 }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Label'">
+    <section class="section">
+        <h1 class="title">Label</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Label</p>
+            </div>
+            <div class="message-body">
+                HTMLのlabel要素に対応するコンポーネントです。<br/>
+                詳しくは
+                <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Label.html">
+                    http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Label.html
+                </a>
+                を参照してください。
+                <p class="subtitle mt-4 mb-2">代表的なパラメータ</p>
+                <table class="table is-hoverable">
+                    <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th>型</th>
+                        <th>説明</th>
+                        <th>必須</th>
+                        <th>Default Prefix</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>for</td>
+                        <td>Field</td>
+                        <td>このLabelに対応するフィールドを指定します。</td>
+                        <td>○</td>
+                        <td>component</td>
+                    </tr>
+                    <tr>
+                        <td>ignoreBody</td>
+                        <td>boolean</td>
+                        <td>
+                            trueなら、このLabelコンポーネントがbodyを持っていても無視します。<br/>
+                            デフォルトはfalseです。
+                        </td>
+                        <td>×</td>
+                        <td>prop</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="mt-2">
+                    <t:sample name="LabelSample" sourceDir="components/component/catalog/form">
+                        <t:component.catalog.form.LabelSample />
+                    </t:sample>
+                </div>
+            </div>
+        </article>
+    </section>
+</t:base>

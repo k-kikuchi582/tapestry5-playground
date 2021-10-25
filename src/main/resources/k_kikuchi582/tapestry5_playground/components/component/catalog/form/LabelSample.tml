@@ -1,0 +1,55 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <div>
+            <h5 class="subtitle is-6 mb-2">Labelの例</h5>
+            <t:form t:id="form">
+                <div class="columns mt-2">
+                    <div class="column is-9">
+                        <t:label for="field1"/>
+                    </div>
+                    <div class="column">
+                        <t:textfield t:id="field1" value="value" class="input is-small"/>
+                    </div>
+                </div>
+                <div class="columns mt-2">
+                    <div class="column is-9">
+                        <t:label for="field2"/><br/>
+                        「&lt;id&gt;-label」というメッセージがなければフィールドのIDをもとに作成します(例:「userId」->「User Id」)
+                    </div>
+                    <div class="column">
+                        <t:textfield t:id="field2" value="value" class="input is-small"/>
+                    </div>
+                </div>
+                <div class="columns mt-2">
+                    <div class="column is-9">
+                        <t:label for="field3"/>
+                    </div>
+                    <div class="column">
+                        <t:textfield t:id="field3" value="value" label="対応するfieldにlabelパラメータが設定されていればそれを使います。" class="input is-small"/>
+                    </div>
+                </div>
+                <div class="columns mt-2">
+                    <div class="column is-9">
+                        <t:label for="field4">
+                            Labelコンポーネントにbodyが存在すればそれを優先します。
+                        </t:label>
+                    </div>
+                    <div class="column">
+                        <t:textfield t:id="field4" value="value" label="このメッセージは無視されます。" class="input is-small"/>
+                    </div>
+                </div>
+                <div class="columns mt-2">
+                    <div class="column is-9">
+                        <t:label for="field5" ignoreBody="true">
+                            このメッセージは無視されます。
+                        </t:label>
+                    </div>
+                    <div class="column">
+                        <t:textfield t:id="field5" value="value" label="ignoreBodyがtrueなら、Labelコンポーネントにbodyが存在しても無視されます。" class="input is-small"/>
+                    </div>
+                </div>
+            </t:form>
+        </div>
+    </div>
+</t:container>
+

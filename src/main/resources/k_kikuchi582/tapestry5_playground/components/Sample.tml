@@ -12,7 +12,27 @@
     </t:block>
 
     <t:block t:id="templateBlock">
-        <t:highlight text="templateText" lang="html"/>
+        <t:if test="hasTemplate">
+            <t:highlight text="templateText" lang="html"/>
+        </t:if>
+    </t:block>
+
+    <t:block t:id="jsBlock">
+        <t:if test="hasJs">
+            <t:highlight text="jsText" lang="javascript"/>
+        </t:if>
+    </t:block>
+
+    <t:block t:id="cssBlock">
+        <t:if test="hasCss">
+            <t:highlight text="cssText" lang="css"/>
+        </t:if>
+    </t:block>
+
+    <t:block t:id="propertiesBlock">
+        <t:if test="hasProperties">
+            <t:highlight text="propertiesText" lang="properties"/>
+        </t:if>
     </t:block>
 </t:container>
 

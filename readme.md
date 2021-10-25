@@ -62,6 +62,7 @@ http://localhost:8080/tapestry5-practice にアクセスする
         - [x] check
         - [x] radio
         - [x] textarea
+        - [x] label
     - [x] block
     - [x] zone
 - [ ] persist

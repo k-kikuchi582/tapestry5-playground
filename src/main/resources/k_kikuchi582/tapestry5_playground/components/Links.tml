@@ -24,6 +24,7 @@
         <li><t:pagelink page="component/catalog/form/Checkbox">/component/catalog/form/Checkbox</t:pagelink></li>
         <li><t:pagelink page="component/catalog/form/Radio">/component/catalog/form/Radio</t:pagelink></li>
         <li><t:pagelink page="component/catalog/form/TextArea">/component/catalog/form/TextArea</t:pagelink></li>
+        <li><t:pagelink page="component/catalog/form/Label">/component/catalog/form/Label</t:pagelink></li>
         <li><t:pagelink page="servicestatus">/servicestatus</t:pagelink></li>
         <li><t:pagelink page="exceptionreport">/exceptionreport</t:pagelink></li>
         <li><t:pagelink page="propertydisplayblocks">/propertydisplayblocks</t:pagelink></li>
