@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Upload'">
+    <section class="section">
+        <h1 class="title">Upload</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Upload</p>
+            </div>
+            <div class="message-body">
+                HTMLのinput[type=file]に対応するコンポーネントです。<br/>
+                <span class="has-text-weight-bold">tapestry-upload</span>を依存関係に含める必要があります。<br/>
+                詳しくは
+                <a href="https://tapestry.apache.org/uploading-files.html">
+                    https://tapestry.apache.org/uploading-files.html
+                </a>
+                を参照してください。<br/>
+                なお、バグなのかはっきりしませんが、Zoneの中に配置するとsubmitしてもリクエストに反映されません。
+                <div class="mt-2">
+                    <t:sample name="UploadSample" sourceDir="components/component/catalog/form">
+                        <t:component.catalog.form.UploadSample />
+                    </t:sample>
+                </div>
+            </div>
+        </article>
+    </section>
+</t:base>

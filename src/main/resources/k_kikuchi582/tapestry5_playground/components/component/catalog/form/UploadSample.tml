@@ -1,0 +1,50 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <div>
+            <h5 class="subtitle is-6 mb-2">Uploadの例</h5>
+            <t:form t:id="form" >
+                <div class="columns mt-2">
+                    <div class="column is-9">
+                        <div class="file has-name is-small" id="file-upload">
+                            <label class="file-label">
+                                <t:upload t:id="upload" value="value" class="file-input"/>
+                                <t:scriptinjector script="uploadScript"/>
+                                <span class="file-cta">
+                                        <span class="file-label">Choose a file...</span>
+                                    </span>
+                                <span class="file-name"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <t:submit t:id="submit" value="更新" class="button is-small"/>
+                    </div>
+                </div>
+                <div class="notification" style="max-height: 300px; overflow-y: auto;">
+                    <t:delegate to="preview"/>
+                </div>
+            </t:form>
+        </div>
+    </div>
+
+    <t:block id="imgBlock">
+        <t:delegate to="block:fileDescription"/>
+        <img src="${previewAsImageLink}" alt="${FileName}"/>
+    </t:block>
+    <t:block id="textBlock">
+        <t:delegate to="block:fileDescription"/>
+        <t:highlight text="fileAsText" lang="prop:fileSubType"/>
+    </t:block>
+    <t:block id="notPreviewableBlock">
+        <t:delegate to="block:fileDescription"/>
+        このファイルはプレビューできません。
+    </t:block>
+    <t:block id="noFileBlock">ファイルがアップロードされていません。</t:block>
+    <t:block id="fileDescription">
+        <div class="tags has-addons">
+            <span class="tag is-dark">${FileName}</span>
+            <span class="tag is-success">${fileSize} byte</span>
+        </div>
+    </t:block>
+</t:container>
+

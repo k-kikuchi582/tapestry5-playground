@@ -38,6 +38,8 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.apache.tapestry/tapestry-core
     implementation group: 'org.apache.tapestry', name: 'tapestry-core', version: '5.1.0.5'
+    // https://mvnrepository.com/artifact/org.apache.tapestry/tapestry-upload
+    implementation group: 'org.apache.tapestry', name: 'tapestry-upload', version: '5.1.0.5'
     // https://mvnrepository.com/artifact/org.javassist/javassist
     implementation group: 'org.javassist', name: 'javassist', version: '3.20.0-GA'
 
