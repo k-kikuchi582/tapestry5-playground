@@ -1,0 +1,68 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <t:zone t:id="persistZone" id="persistZone">
+            <t:form zone="persistZone">
+                <div class="columns">
+                    <div class="column is-3">
+                        Persistなし
+                    </div>
+                    <div class="column is-6">
+                        <t:textfield t:id="noPersistValue" class="input is-small"/>
+                    </div>
+                    <div class="column is-3">
+                        <div class="notification">${noPersistValue}</div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column is-3">
+                        Persistあり
+                    </div>
+                    <div class="column is-6">
+                        <t:textfield t:id="persistValue" class="input is-small"/>
+                    </div>
+                    <div class="column is-3">
+                        <div class="notification">${persistValue}</div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column is-3">
+                        Persistあり(session-デフォルト)
+                    </div>
+                    <div class="column is-6">
+                        <t:textfield t:id="sessionValue" class="input is-small"/>
+                    </div>
+                    <div class="column is-3">
+                        <div class="notification">${sessionValue}</div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column is-3">
+                        Persistあり(flash)
+                    </div>
+                    <div class="column is-6">
+                        <t:textfield t:id="flashValue" class="input is-small"/>
+                    </div>
+                    <div class="column is-3">
+                        <div class="notification">${flashValue}</div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column is-3">
+                        Persistあり(client)
+                    </div>
+                    <div class="column is-6">
+                        <t:textfield t:id="clientValue" class="input is-small"/>
+                    </div>
+                    <div class="column is-3">
+                        <div class="notification">${clientValue}</div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column is-2"><t:submit value="submit" class="button"/></div>
+                    <div class="column is-2"><t:eventlink event="update" class="button" zone="persistZone">update</t:eventlink></div>
+                </div>
+            </t:form>
+        </t:zone>
+    </div>
+</t:container>
+

@@ -56,7 +56,7 @@ http://localhost:8080/tapestry5-practice にアクセスする
         - [x] unless
         - [x] loop
         - [x] delegate
-    - [ ] form
+    - [x] form
         - [x] textfield
         - [x] select
         - [x] check
@@ -66,4 +66,4 @@ http://localhost:8080/tapestry5-practice にアクセスする
         - [x] upload
     - [x] block
     - [x] zone
-- [ ] persist
+- [x] persist

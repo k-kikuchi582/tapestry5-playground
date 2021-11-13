@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Persistent Page Data'">
+    <section class="section">
+        <h1 class="title">Persistent Page Data</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>ページのデータの保持</p>
+            </div>
+            <div class="message-body">
+                <div class="content">
+                    <p>
+                        フィールドに<t:tag>@Persist</t:tag>を付与することでページのデータをリクエストをまたいで保持し続けることができます。
+                    </p>
+                    <p>
+                        保持の方法として<t:tag>Session</t:tag>,<t:tag>Flash</t:tag>,<t:tag>Client</t:tag>の三種類が用意されています。<br/>
+                        Sessionはセッションを使って@Persistアノテーションを付けたフィールドの値を保存します。これがデフォルトの方法です。<br/>
+                        FlashはSessionと同じくSessionを使いますが、ページの再表示が終わると破棄されます。<br/>
+                        ClientはURLのクエリパラメータを追加するか、フォームのhiddenフィールドを使います。
+                        クエリパラメータやフォームのhiddenフィールドに値を載せるためにエンコードとデコードの必要があるため、各リクエストの度に余分な処理が発生します。
+                        また、クエリパラメータが長くなるとブラウザ、ファイアウォール等がURLを自動的に切り詰めていまい、データが壊れることがあります。
+                        したがってClientは、オブジェクトそのものではなくオブジェクトのIDを保存する等、注意して使用する必要があります。
+                    </p>
+                    <p>
+                        @Persistアノテーションを付与するフィールドをprivateにする必要があること、
+                        @Persistアノテーションを付与したフィールドは宣言と一緒に代入してはいけないことに注意してください。
+                    </p>
+                    <p>
+                        詳しくは
+                        <a href="https://tapestry.apache.org/persistent-page-data.html">
+                            https://tapestry.apache.org/persistent-page-data.html
+                        </a>
+                        を参照してください。
+                    </p>
+                    <p>
+                        以下の例では各Persist方法ごとにどのような挙動になるかを確認できます。<br/>
+                        「submit」ボタンはフォームのsubmitです。「update」ボタンはフォームをsubmitしない単なる更新となります。<br/>
+                        「Persistなし」では「submit」を押せば入力した文字列が反映されますが、データを保持していないので、そのあとで「update」ボタンを押すと入力が消えてしまいます。<br/>
+                        「Persistあり」「Persistあり(session-デフォルト)」「Persist(client)」では一度「submit」してから次に何度「update」を押してもデータは消えないことから、
+                        データが保持されていることがわかります。ただし、ページのリロードを行うと「Persist(client)」ではデータが消えてしまいます。
+                        これはデータをクライアント側で(ここではformの内部なのでhiddenを使って)保持しているため、ページのリロードをすると消えてしまうためです。
+                        一方で、「Persistあり」「Persistあり(session-デフォルト)」「Persistあり(flash)」はデータをセッションで保持しているため、ページのリロードでは消えません
+                        (ただし、後述の理由から「Persistあり(flash)」は「submit」の直後にリロードした時のみ)<br/>
+                        「Persist(flash)」では「submit」をしてデータを送信した後、次に「update」を押したときはデータが残りますが、もう一度「update」を押すとデータが消えてしまいます。
+                        これは、Flashではデータが更新されたリクエストの次のリクエストまでしかデータを保持しないためです。
+                    </p>
+                </div>
+                <div class="mt-2">
+                    <t:sample name="PersistSample" sourceDir="components/persistence">
+                        <t:persistence.PersistSample />
+                    </t:sample>
+                </div>
+            </div>
+        </article>
+    </section>
+</t:base>

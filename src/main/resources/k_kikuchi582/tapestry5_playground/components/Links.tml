@@ -2,7 +2,7 @@
     <ul class="${class}">
         <li><t:pagelink page="index" t:mixins="MenuPageLink">/index</t:pagelink></li>
         <li><t:pagelink page="sample">/sample</t:pagelink></li>
-        <li><t:pagelink page="persistence" context="['abc', 7]">/persistence/abc/7</t:pagelink></li>
+        <li><t:pagelink page="persistence/PersistentPageData">/persistence/PersistentPageData</t:pagelink></li>
         <li><t:pagelink page="ioc/IoC">/ioc/IoC</t:pagelink></li>
         <li><t:pagelink page="localization/MessageCatalog">/localization/MessageCatalog</t:pagelink></li>
         <li><t:pagelink page="component/PageAndComponent">/component/PageAndComponent</t:pagelink></li>
