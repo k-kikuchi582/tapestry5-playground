@@ -1,11 +1,21 @@
 package k_kikuchi582.tapestry5_playground.services;
 
+import k_kikuchi582.tapestry5_playground.internal.AssetType;
 import k_kikuchi582.tapestry5_playground.services.ioc.*;
 import org.apache.tapestry5.SymbolConstants;
+import org.apache.tapestry5.corelib.LoopFormState;
+import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.InjectService;
 import org.apache.tapestry5.ioc.annotations.ServiceId;
+import org.apache.tapestry5.ioc.services.Builtin;
+import org.apache.tapestry5.ioc.services.CoercionTuple;
+import org.apache.tapestry5.ioc.services.ThreadLocale;
+import org.apache.tapestry5.ioc.services.TypeCoercer;
+import org.apache.tapestry5.services.AssetSource;
+import org.apache.tapestry5.services.Core;
+import org.apache.tapestry5.util.StringToEnumCoercion;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,5 +53,9 @@ public class AppModule {
             @InjectService("i-service-a") IService serviceA,
             @InjectService("i-service-b") IService serviceB ) {
         return new CompositeService( serviceA, serviceB );
+    }
+
+    public static void contributeTypeCoercer(Configuration<CoercionTuple> configuration) {
+        configuration.add(new CoercionTuple<>(String.class, AssetType.class, StringToEnumCoercion.create(AssetType.class)));
     }
 }

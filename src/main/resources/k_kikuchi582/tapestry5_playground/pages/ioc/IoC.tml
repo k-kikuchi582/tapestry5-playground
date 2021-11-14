@@ -1,25 +1,119 @@
+<!DOCTYPE html>
 <t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'IoC'">
-    <h1 class="title">IoC</h1>
-    <div class="columns">
-        <div class="column">
-            <div class="box">
-                <p class="subTitle">ServiceA</p>${serviceA}
+    <section class="section">
+        <h1 class="title">IoC</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Inversion of Control</p>
             </div>
-        </div>
-        <div class="column">
-            <div class="box">
-                <p class="subTitle">ServiceB</p>${serviceB}
+            <div class="message-body">
+                <div class="content">
+                    <p>
+                        TapestryはIoCを実現する仕組みを備えています。
+                        IoC(Inversion of Control)を正確に説明することは筆者にはできないので、ここでは、あるクラスの初期化をそのクラスを使用する側で行うのではなく、
+                        あらかじめ作成しておいたインスタンスを使用したい側に渡す仕組みということとしておきます。<br/>
+                        このようにすることで、あるインターフェースに対する実装が複数ある時に、どの実装を使用すべきかをまとめて管理しておけたり、
+                        依存するクラスが多い複雑なクラスの初期化を簡単にすることができます。<br/>
+                        (筆者のIoC理解ははっきり言って無なので、自身で調べて理解することをお勧めします。)
+                    </p>
+                    <p>
+                        詳しくは
+                        <a href="https://tapestry.apache.org/ioc.html">
+                            https://tapestry.apache.org/ioc.html
+                        </a>
+                        を参照してください。
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="column">
-            <div class="box">
-                <p class="subTitle">ServiceComposite</p>${serviceComposite}
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>IoCコンテナへの登録</p>
             </div>
-        </div>
-        <div class="column">
-            <div class="box">
-                <p class="subTitle">ServiceD</p>${serviceD}
+            <div class="message-body">
+                <div class="content">
+                    <p>
+                        &lt;tapestry.app-package&gt;.services.AppModule.javaでIoCコンテナへサービスの登録を行うことができます。
+                        tapestry.app-packageはweb.xmlのcontext-paramで設定します。
+                    </p>
+                    <p>
+                        IoCコンテナへの登録方法はいくつかありますが、ServiceBinderを使う方法ではIoCコンテナが自動的にコンストラクタを探してインスタンスを作成します。
+                        このとき、サービスクラスのコンストラクタが引数をとり、その引数の型がIoCコンテナに登録されているなら、
+                        IoCコンテナが適切なサービスを探し出して引数にあてはめてくれます。
+                        同じインターフェースを持つサービスが複数登録されている場合は、@InjectServiceアノテーションを用いることで、使用するサービスを指定することができます。
+
+                    </p>
+                    <p>
+                        モジュールクラスでbuildから始まるメソッドで登録する方法もあります。<br/>
+                        この場合も、buildメソッドが引数を持ち、その引数の型がIoCコンテナに登録されているなら、
+                        IoCコンテナが適切なサービスを探し出して引数にあてはめてくれます。
+                        @InjectServiceアノテーションを用いることで使用するサービスを指定することができる点も同じです。
+                    </p>
+                    <p>
+                        詳しくは
+                        <a href="https://tapestry.apache.org/tapestry-ioc-configuration.html">
+                            https://tapestry.apache.org/tapestry-ioc-configuration.html
+                        </a>
+                        を参照してください。
+                    </p>
+                </div>
+                <div class="mt-2">
+                    <t:tabs headers="['AppModule.java', 'IService.java', 'ServiceA.java', 'ServiceB.java', 'ServiceC.java', 'ServiceD.java', 'CompositeService.java','web.xml']"
+                            bodies="registerIocContainerBodies" bodyMaxHeight="500px"/>
+                </div>
             </div>
-        </div>
-    </div>
+
+            <t:block t:id="appModuleText">
+                <t:viewer source="k_kikuchi582/tapestry5_playground/services/AppModule.java" lang="java"/>
+            </t:block>
+            <t:block t:id="iServiceText">
+                <t:viewer source="k_kikuchi582/tapestry5_playground/services/ioc/IService.java" lang="java"/>
+            </t:block>
+            <t:block t:id="ServiceAText">
+                <t:viewer source="k_kikuchi582/tapestry5_playground/services/ioc/ServiceA.java" lang="java"/>
+            </t:block>
+            <t:block t:id="ServiceBText">
+                <t:viewer source="k_kikuchi582/tapestry5_playground/services/ioc/ServiceB.java" lang="java"/>
+            </t:block>
+            <t:block t:id="ServiceCText">
+                <t:viewer source="k_kikuchi582/tapestry5_playground/services/ioc/ServiceC.java" lang="java"/>
+            </t:block>
+            <t:block t:id="ServiceDText">
+                <t:viewer source="k_kikuchi582/tapestry5_playground/services/ioc/ServiceD.java" lang="java"/>
+            </t:block>
+            <t:block t:id="CompositeServiceText">
+                <t:viewer source="k_kikuchi582/tapestry5_playground/services/ioc/CompositeService.java" lang="java"/>
+            </t:block>
+            <t:block t:id="webXmlText">
+                <t:viewer source="WEB-INF/web.xml" lang="xml" type="CONTEXT"/>
+            </t:block>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>ページ/コンポーネントでIoCコンテナに登録したインスタンスを使う</p>
+            </div>
+            <div class="message-body">
+                <div class="content">
+                    <p>
+                        フィールドに@Injectアノテーションや@InjectServiceアノテーションを付与することで、IoCコンテナに登録されているインスタンスを利用することができます。
+                    </p>
+                    <p>
+                        詳しくは
+                        <a href="https://tapestry.apache.org/defining-tapestry-ioc-services.html">
+                            https://tapestry.apache.org/defining-tapestry-ioc-services.html
+                        </a>
+                        を参照してください。
+                    </p>
+                </div>
+                <div class="mt-2">
+                    <t:sample name="IoCSample" sourceDir="components/ioc">
+                        <t:ioc.IoCSample />
+                    </t:sample>
+                </div>
+            </div>
+        </article>
+    </section>
 </t:base>

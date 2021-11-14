@@ -1,35 +1,39 @@
 package k_kikuchi582.tapestry5_playground.pages.ioc;
 
-import k_kikuchi582.tapestry5_playground.services.ioc.IService;
-import k_kikuchi582.tapestry5_playground.services.ioc.ServiceD;
+import org.apache.tapestry5.Block;
+import org.apache.tapestry5.annotations.Id;
 import org.apache.tapestry5.ioc.annotations.Inject;
-import org.apache.tapestry5.ioc.annotations.InjectService;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class IoC {
-    // @InjectServiceを使ってIoCに登録されているインスタンスをInjectできる
-    @InjectService("i-service-a")
-    private IService serviceA;
-    @InjectService("i-service-b")
-    private IService serviceB;
-    @InjectService("i-service-composite")
-    private IService serviceComposite;
-    // idが必要なければ@Injectを使う
     @Inject
-    private ServiceD serviceD;
+    @Id("appModuleText")
+    private Block appModuleText;
+    @Inject
+    @Id("iServiceText")
+    private Block iServiceText;
+    @Inject
+    @Id("serviceAText")
+    private Block serviceAText;
+    @Inject
+    @Id("serviceBText")
+    private Block serviceBText;
+    @Inject
+    @Id("serviceCText")
+    private Block serviceCText;
+    @Inject
+    @Id("serviceDText")
+    private Block serviceDText;
+    @Inject
+    @Id("compositeServiceText")
+    private Block compositeServiceText;
+    @Inject
+    @Id("webXmlText")
+    private Block webXmlText;
 
-    public String getServiceA() {
-        return serviceA.method();
-    }
-
-    public String getServiceB() {
-        return serviceB.method();
-    }
-
-    public String getServiceComposite() {
-        return serviceComposite.method();
-    }
-
-    public String getServiceD() {
-        return serviceD.method();
+    public List<Block> getRegisterIocContainerBodies() {
+        return Arrays.asList(appModuleText, iServiceText, serviceAText, serviceBText, serviceCText, serviceDText, compositeServiceText, webXmlText);
     }
 }

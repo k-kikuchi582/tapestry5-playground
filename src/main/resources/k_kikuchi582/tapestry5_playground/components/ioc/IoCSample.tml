@@ -1,0 +1,27 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="box mt-0">
+        <div class="columns">
+            <div class="column">
+                <div class="box">
+                    <p class="subTitle">ServiceA</p>${serviceA}
+                </div>
+            </div>
+            <div class="column">
+                <div class="box">
+                    <p class="subTitle">ServiceB</p>${serviceB}
+                </div>
+            </div>
+            <div class="column">
+                <div class="box">
+                    <p class="subTitle">ServiceComposite</p>${serviceComposite}
+                </div>
+            </div>
+            <div class="column">
+                <div class="box">
+                    <p class="subTitle">ServiceD</p>${serviceD}
+                </div>
+            </div>
+        </div>
+    </div>
+</t:container>
+
