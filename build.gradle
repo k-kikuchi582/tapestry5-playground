@@ -66,6 +66,12 @@ gretty {
     debugPort = 5005
     // trueにするとデバッグ接続されるまでサーバの起動が始まらない
     debugSuspend = false
+    // fastReloadやhotDeploymentが起こるとエラーになることが多いのでこれらの機能は切っておく
+    fastReload = false
+    recompileOnSourceChange = false
+    reloadOnClassChange = false
+    reloadOnConfigChange = false
+    reloadOnLibChange = false
 }
 
 processResources {
