@@ -10,7 +10,7 @@ public class Show {
     private Object value;
 
     public String getType() {
-        if (value == null) return "type: NULLr";
+        if (value == null) return "type: NULL";
         return value.getClass().getSimpleName();
     }
 

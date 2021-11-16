@@ -1,0 +1,15 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <div class="notification">
+        <t:zone t:id="wrapperCountZone" id="wrapperCountZone" update="show">
+            <div class="columns">
+                <div class="column">${wrapper.count}</div>
+                <div class="column">
+                    <t:parameter.ParameterBiDirectional count="wrapper.count"
+                                                        zoneId="wrapperCountZone"
+                                                        zone="wrapperCountZone"/>
+                </div>
+            </div>
+        </t:zone>
+    </div>
+</t:container>
+

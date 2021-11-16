@@ -8,53 +8,33 @@
         <div class="message-body">
             パラメータは双方向的です。つまり、パラメータを通してコンポーネントに値を渡すことができる一方で、
             コンポーネント内でパラメータとして宣言されたフィールドが更新されると、その変更はパラメータを渡した側にも反映されます。<br/>
-            コンポーネント内でパラメータを変更する場合、パラメータを渡す側でsetterを定義する必要があります。
-
+            コンポーネント内でパラメータを変更する場合、パラメータを渡す側でsetterを定義する必要があります。<br/>
+            詳しくは
             <a href="https://tapestry.apache.org/component-parameters.html#ComponentParameters-ParametersAreBi-Directional">
                 https://tapestry.apache.org/component-parameters.html#ComponentParameters-ParametersAreBi-Directional
             </a>
-            <pre class="mt-2">
-                <t:outputraw value="componentText"/>
-            </pre>
-            <pre class="mt-2">
-                <t:outputraw value="pageText1"/>
-            </pre>
-            <pre class="mt-2">
-                <t:outputraw value="tmlText1"/>
-            </pre>
+            を参照してください。
             <div class="mt-2">
-                <t:zone t:id="countZone" update="show">
-                    <div class="columns">
-                        <div class="column">${count}</div>
-                        <div class="column">
-                            <t:parameter.ParameterBiDirectional count="count"
-                                                                zoneId="countZone"
-                                                                zone="countZone"/>
-                        </div>
-                    </div>
-                </t:zone>
+                <t:sample name="ParameterBiDirectionalParent" sourceDir="components/parameter" additionalItems="additionalItems">
+                    <t:parameter.ParameterBiDirectionalParent/>
+                </t:sample>
             </div>
             <div class="mt-2">
-                パラメータに値を渡す側では渡す値を直接持たずに別のオブジェクトを介して持つこともできます。
+                パラメータに渡す値を直接持たずに、別のオブジェクトを介して渡しても更新されます。
             </div>
-            <pre class="mt-2">
-                <t:outputraw value="pageText2"/>
-            </pre>
-            <pre class="mt-2">
-                <t:outputraw value="tmlText2"/>
-            </pre>
             <div class="mt-2">
-                <t:zone t:id="wrapperCountZone" update="show">
-                    <div class="columns">
-                        <div class="column">${wrapper.count}</div>
-                        <div class="column">
-                            <t:parameter.ParameterBiDirectional count="wrapper.count"
-                                                                zoneId="wrapperCountZone"
-                                                                zone="wrapperCountZone"/>
-                        </div>
-                    </div>
-                </t:zone>
+                <t:sample name="ParameterBiDirectionalWrapperParent" sourceDir="components/parameter" additionalItems="additionalItems">
+                    <t:parameter.ParameterBiDirectionalWrapperParent/>
+                </t:sample>
             </div>
+
+            <t:block t:id="parameterBiDirectionalJavaBlock">
+                <t:viewer source="k_kikuchi582/tapestry5_playground/components/parameter/ParameterBiDirectional.java" lang="java"/>
+            </t:block>
+
+            <t:block t:id="parameterBiDirectionalTmlBlock">
+                <t:viewer source="k_kikuchi582/tapestry5_playground/components/parameter/ParameterBiDirectional.tml" lang="html"/>
+            </t:block>
         </div>
     </article>
 </t:base>

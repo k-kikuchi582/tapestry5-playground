@@ -1,8 +1,21 @@
+package k_kikuchi582.tapestry5_playground.components.parameter;
+
+import org.apache.tapestry5.annotations.InjectComponent;
+import org.apache.tapestry5.annotations.Persist;
+import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.annotations.SetupRender;
+import org.apache.tapestry5.corelib.components.Zone;
+
+public class ParameterBiDirectionalWrapperParent {
     @Persist
     private CountWrapper wrapper;
 
-    @OnEvent(EventConstants.ACTIVATE)
-    void onActivate() {
+    @InjectComponent("wrapperCountZone")
+    @Property
+    private Zone wrapperCountZone;
+
+    @SetupRender
+    void setupRender() {
         if (wrapper == null) {
             wrapper = new CountWrapper();
         }
@@ -28,3 +41,4 @@
             this.count = count;
         }
     }
+}

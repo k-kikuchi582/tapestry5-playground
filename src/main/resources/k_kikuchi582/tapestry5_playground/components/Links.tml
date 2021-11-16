@@ -8,7 +8,7 @@
         <li><t:pagelink page="component/PageAndComponent">/component/PageAndComponent</t:pagelink></li>
         <li><t:pagelink page="component/BindingExpressions">/component/BindingExpressions</t:pagelink></li>
         <li><t:pagelink page="component/PropertyExpressions">/component/PropertyExpressions</t:pagelink></li>
-        <li><t:pagelink page="parameter/ParameterSample">/parameter/ParameterSample</t:pagelink></li>
+        <li><t:pagelink page="parameter/Parameter">/parameter/Parameter</t:pagelink></li>
         <li><t:pagelink page="parameter/BiDirectionality">/parameter/BiDirectionality</t:pagelink></li>
         <li><t:pagelink page="component/event/PageActivation">/component/event/PageActivation</t:pagelink></li>
         <li><t:pagelink page="component/event/EventHandler">/component/event/EventHandler</t:pagelink></li>

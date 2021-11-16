@@ -18,7 +18,7 @@
                 <div>
                     メッセージは<span class="tag">key=value</span>の形式で定義します。
                 </div>
-                <pre>
+                <pre class="mt-2">
                     en=English
                     ja=Japanese
                 </pre>
@@ -30,10 +30,12 @@
             <div class="message-header">
                 <p>${message:localization.section1.title}</p>
             </div>
-            <div class="message-body"><t:outputraw value="${message:localization.section1.body}"/></div>
-            <pre>
-                $<t:outputraw value="'{message:localization.section1.body}'"/>
-            </pre>
+            <div class="message-body">
+                <t:outputraw value="${message:localization.section1.body}"/>
+                <pre class="mt-2">
+                    $<t:outputraw value="'{message:localization.section1.body}'"/>
+                </pre>
+            </div>
         </article>
 
         <article class="message is-dark">
@@ -42,11 +44,9 @@
             </div>
             <div class="message-body">
                 ${body2}
-                <pre>
+                <pre class="mt-2">
                     @Inject
                     private Messages messages;
-                    <t:textoutput value="' '"/>
-                    public getMessage
                     <t:textoutput value="' '"/>
                     public String getTitle2() {
                     <t:outputraw value="'    '"/>return messages.get("localization.section2.title");

@@ -16,29 +16,27 @@
             使うことでデフォルトのプレフィックスを変更することもできます。<br/>
             パラメータはデフォルトでは省略可能ですが、<span class="tag is-white">@Parameter</span>アノテーションの
             <span class="tag is-white">required</span>プロパティを使うことで省略不可にすることもできます。<br/>
-
+            詳しくは
             <a href="https://tapestry.apache.org/component-parameters.html">
                 https://tapestry.apache.org/component-parameters.html
             </a>
-            <pre class="mt-2">
-                <t:outputraw value="parametersClassContent"/>
-            </pre>
-            <pre class="mt-2">
-                &lt;t:parameter.Parameters parama="literal:A" b="'B'" paramc="'paramc'" paramd="D" paramf="'F'"/&gt;
-            </pre>
+            を参照してください。
             <div class="mt-2">
-                <t:parameter.Parameters
-                        parama="literal:A"
-                        b="'B'"
-                        paramc="'paramc'"
-                        paramd="D"
-                        paramf="'F'"/>
+                <t:sample name="ParameterSample" sourceDir="components/parameter" additionalItems="additionalItems">
+                    <t:parameter.ParameterSample
+                            parama="literal:A"
+                            b="'B'"
+                            paramc="'paramc'"
+                            paramd="D"
+                            paramf="'F'"/>
+                </t:sample>
             </div>
-            <pre class="mt-2">
-                // cはrequired=trueなので省略不可
-                // fはallowNull=falseなのでnullは不可
-                 &lt;t:parameter.parameters parama="literal:A" b="'B'" paramd="D" paramf="null"/&gt;
-            </pre>
+            <t:block t:id="validUsageBLock">
+                <t:viewer source="k_kikuchi582/tapestry5_playground/pages/parameter/validUsage" lang="html"/>
+            </t:block>
+            <t:block t:id="invalidUsageBlock">
+                <t:viewer source="k_kikuchi582/tapestry5_playground/pages/parameter/invalidUsage" lang="html"/>
+            </t:block>
         </div>
     </article>
 </t:base>

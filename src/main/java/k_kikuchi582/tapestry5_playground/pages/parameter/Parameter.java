@@ -8,20 +8,20 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import java.util.Arrays;
 import java.util.List;
 
-public class BiDirectionality {
+public class Parameter {
 
     @Inject
-    @Id("parameterBiDirectionalJavaBlock")
-    private Block parameterBiDirectionalJavaBlock;
+    @Id("validUsageBlock")
+    private Block validUsageBlock;
 
     @Inject
-    @Id("parameterBiDirectionalTmlBlock")
-    private Block parameterBiDirectionalTmlBlock;
+    @Id("invalidUsageBlock")
+    private Block invalidUsageBlock;
 
     public List<AdditionalSampleItem> getAdditionalItems() {
         return Arrays.asList(
-                new AdditionalSampleItem( "ParameterBiDirectional.java", parameterBiDirectionalJavaBlock ),
-                new AdditionalSampleItem( "ParameterBiDirectional.tml", parameterBiDirectionalTmlBlock )
+                new AdditionalSampleItem( "valid usage", validUsageBlock),
+                new AdditionalSampleItem( "invalid usage", invalidUsageBlock)
         );
     }
 }

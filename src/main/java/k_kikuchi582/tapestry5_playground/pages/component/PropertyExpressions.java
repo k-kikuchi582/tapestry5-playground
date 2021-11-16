@@ -25,7 +25,6 @@ public class PropertyExpressions {
     }
 
     public List<String> getList() {
-
         return null;
     }
 

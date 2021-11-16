@@ -37,11 +37,11 @@
 
         <article class="message">
             <div class="message-header">
-                <p>定数</p>
+                <p>リテラル</p>
             </div>
             <div class="message-body">
-                以下の定数を使うことができます。<br/>
-                'true','false',null,integer,decimal,'string'
+                以下のリテラルを使うことができます。<br/>
+                'true', 'false', null, integer, decimal, 'string', List, Range
                 <pre class="mt-2">
                     &lt;t:show value="true"/&gt;<br/>
                     &lt;t:show value="false"/&gt;<br/>
@@ -49,6 +49,8 @@
                     &lt;t:show value="123"/&gt;<br/>
                     &lt;t:show value="1.23"/&gt;<br/>
                     &lt;t:show value="'string-literal'"/&gt;<br/>
+                    &lt;t:show value="['list', 123, 1.23]"/&gt;<br/>
+                    &lt;t:show value="1..10"/&gt;<br/>
                 </pre>
                 <div class="mt-2 is-flex is-flex-wrap-wrap gap-2">
                     <t:show value="true"/>
@@ -57,6 +59,8 @@
                     <t:show value="123"/>
                     <t:show value="1.23"/>
                     <t:show value="'string-literal'"/>
+                    <t:show value="['list', 123, 1.23]"/>
+                    <t:show value="1..10"/>
                 </div>
             </div>
         </article>
@@ -90,6 +94,25 @@
                 <div class="mt-2 is-flex is-flex-wrap-wrap gap-2">
                     <t:show value="currentDateTime.plusDays(10).toLocalDate()"/>
                     <t:show value="list?.size()"/>
+                </div>
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>否定</p>
+            </div>
+            <div class="message-body">
+                '!'を頭に付けることでBooleanの否定、または、nullか空の文字列をtrueとして評価します。
+                <pre class="mt-2">
+                    &lt;t:show value="!false"/&gt;
+                    &lt;t:show value="!list"/&gt;
+                    &lt;t:show value="!''"/&gt;
+                </pre>
+                <div class="mt-2 is-flex is-flex-wrap-wrap gap-2">
+                    <t:show value="!false"/>
+                    <t:show value="!list"/>
+                    <t:show value="!''"/>
                 </div>
             </div>
         </article>

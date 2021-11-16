@@ -1,0 +1,3 @@
+// cはrequired=trueなので省略不可
+// fはallowNull=falseなのでnullは不可
+<t:parameter.parameters parama="literal:A" b="'B'" paramd="D" paramf="null"/>
