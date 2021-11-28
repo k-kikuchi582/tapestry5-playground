@@ -2,7 +2,7 @@
 javaのWebアプリケーションフレームワーク
 [tapestry](https://tapestry.apache.org/index.html) のサンプルプロジェクトです。
 
-諸般の事情で`5.1.0.5`に準拠しています。
+諸般の事情で最新のバージョンではなく`5.1.0.5`に準拠しています。
 
 ### 実行環境
 jdk8
@@ -44,7 +44,7 @@ http://localhost:8080/tapestry5-practice にアクセスする
 - [x] component event
     - [x] handler
     - [x] response
-- [ ] components
+- [x] components
     - [x] control
         - [x] if
         - [x] unless

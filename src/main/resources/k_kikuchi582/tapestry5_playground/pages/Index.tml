@@ -1,5 +1,28 @@
-<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'たいとる'">
-    <h1 class="title">Hello World</h1>
-    <t:links/>
+<t:base xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" title="'Tapestry5 practice'">
+    <section class="section">
+        <h1 class="title">Tapestry5 practice</h1>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Tapestryとは</p>
+            </div>
+            <div class="message-body">
+                <a href="https://tapestry.apache.org/">Apache Tapestry</a>とはJavaのWebアプリケーションフレームワークです。
+                リクエストを処理するコントローラを実装していく多くのWebアプリケーションフレームワークとは異なり、
+                ページや、ページを組み立てる再利用可能な部品(=コンポーネント)の単位で実装していくコンポーネントベースのフレームワークです。
+            </div>
+        </article>
+
+        <article class="message">
+            <div class="message-header">
+                <p>本プロジェクトの目的</p>
+            </div>
+            <div class="message-body">
+                Tapestryは使われているとは言い難く利用できるドキュメントが限られているのが現状です。
+                また、コンポーネントベースという珍しい考え方に基づいたフレームワークであり、ドキュメントの少なさもあって学習難度が高めです。
+                本プロジェクトは実例を交えながらTapestryの基本的な機能を説明し、これからTapestryに触る開発者に向けての手引きとなることを目的としています。
+            </div>
+        </article>
+    </section>
 </t:base>
 

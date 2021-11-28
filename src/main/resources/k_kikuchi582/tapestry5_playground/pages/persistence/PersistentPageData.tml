@@ -10,7 +10,8 @@
             <div class="message-body">
                 <div class="content">
                     <p>
-                        フィールドに<t:tag>@Persist</t:tag>を付与することでページのデータをリクエストをまたいで保持し続けることができます。
+                        データをリクエストをまたいで保持し続ける仕組みです。
+                        フィールドに<t:tag>@Persist</t:tag>を付与することで利用することができます。
                     </p>
                     <p>
                         保持の方法として<t:tag>Session</t:tag>,<t:tag>Flash</t:tag>,<t:tag>Client</t:tag>の三種類が用意されています。<br/>

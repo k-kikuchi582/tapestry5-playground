@@ -32,7 +32,7 @@
         </div>
         <div class="hero-body">
             <div class="container">
-                <h1 class="title">Tapestry5 practice</h1>
+                <h1 class="title"><t:pagelink page="index">Tapestry5 practice</t:pagelink></h1>
                 <h2 class="subtitle">${title}</h2>
             </div>
         </div>
